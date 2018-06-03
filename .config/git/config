@@ -1,9 +1,7 @@
 # This is Git's per-user configuration file.
-[core]
-	excludesfile = /Users/henri/.git/gitignore
 [user]
-	name = Henri Watson
-	email = henri@henriwatson.com
+	name = Harley Watson
+	email = htw@lobi.to
 [push]
 	default = simple
 [filter "lfs"]
@@ -17,4 +15,7 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [commit]
-#	gpgsign = true
+	#gpgsign = true
+	template = /Users/htw/.stCommitMsg
+[core]
+	excludesfile = /Users/htw/.gitignore_global
