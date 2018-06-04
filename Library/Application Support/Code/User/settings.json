@@ -1,3 +1,7 @@
 {
-    "editor.wordWrap": "bounded"
+    "editor.wordWrap": "bounded",
+    "workbench.colorTheme": "One Dark Pro",
+    "editor.fontSize": 15,
+    "editor.wordWrap": "bounded",
+    "editor.rulers": [80],
 }
