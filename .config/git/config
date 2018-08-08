@@ -1,7 +1,4 @@
 # This is Git's per-user configuration file.
-[user]
-	name = Harley Watson
-	email = htw@lobi.to
 [push]
 	default = simple
 [filter "lfs"]

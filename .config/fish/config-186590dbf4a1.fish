@@ -34,3 +34,9 @@ source $HOME/.aws/aws_default_profile
 
 # export NVM_DIR="$HOME/.nvm"
 # bass source "/usr/local/opt/nvm/nvm.sh"
+
+# machine-specific git configuration
+set -gx GIT_AUTHOR_NAME "Harley Watson"
+set -gx GIT_AUTHOR_EMAIL "harley.watson@skyscanner.net"
+set -gx GIT_COMMITTER_NAME "$GIT_AUTHOR_NAME"
+set -gx GIT_COMMITTER_EMAIL "$GIT_AUTHOR_EMAIL"
