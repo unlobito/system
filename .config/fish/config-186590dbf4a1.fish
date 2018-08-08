@@ -21,6 +21,8 @@ function mshell-aws-login-auto
 
     mshell-aws-login-adfs --mfa-type totp --username harleywatson --password $password
 
+    source ~/.aws/aws_default_profile
+
     echo $oldclipboard | pbcopy
     echo "Restored clipboard"
 end
