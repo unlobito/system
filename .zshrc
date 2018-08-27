@@ -1,0 +1,56 @@
+#######################################
+## General macOS shell configuration ##
+#######################################
+
+# zsh configuration
+
+## Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+## Theme configuration
+ZSH_THEME="spaceship"
+
+SPACESHIP_PROMPT_SEPARATE_LINE="false"
+SPACESHIP_CHAR_SUFFIX=" "
+
+## zsh options
+HIST_STAMPS="yyyy-mm-dd"
+
+## Plugin configuration
+plugins=(
+  git
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# Binary search path setup
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+export MAKEOPTS="-j4"
+export EDITOR="nano"
+
+alias ls="ls -G"
+alias nh='unset HISTFILE'
+alias beep='osascript -e "beep 1"'
+
+alias homegit="git --work-tree=$HOME --git-dir=$HOME/.files.git"
+
+alias qr="qrcode-terminal"
+
+# rbenv/pyenv init
+eval "$(rbenv init -)"
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# Import environment-specific configuration based on MAC address
+localconfig="$HOME/.config/zsh/config-"$(ifconfig en0 | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}' | sed 's/://g')
+
+if test -e "$localconfig-secrets.zsh"; then
+    # Make secrets available to public config
+    source "$localconfig-secrets.zsh"
+fi
+
+if test -e "$localconfig.zsh"; then
+    source "$localconfig.zsh"
+fi

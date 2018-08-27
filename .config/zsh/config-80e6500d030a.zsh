@@ -9,14 +9,14 @@
 
 
 # Binary search path setup
-set PATH $HOME/bin/android-sdk/platform-tools $PATH
+export PATH=$HOME/bin/android-sdk/platform-tools:$PATH
 
 # Platform path setup
-set NODE_PATH /usr/local/lib/node_modules:$NODE_PATH
-set GOPATH "/Users/htw/w/go"
+export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+export GOPATH="/Users/htw/w/go"
 
 # machine-specific git configuration
-set -gx GIT_AUTHOR_NAME "Harley Watson"
-set -gx GIT_AUTHOR_EMAIL "htw@lobi.to"
-set -gx GIT_COMMITTER_NAME "$GIT_AUTHOR_NAME"
-set -gx GIT_COMMITTER_EMAIL "$GIT_AUTHOR_EMAIL"
+export GIT_AUTHOR_NAME="Harley Watson"
+export GIT_AUTHOR_EMAIL="htw@lobi.to"
+export GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
+export GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"

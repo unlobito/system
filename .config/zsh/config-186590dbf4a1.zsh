@@ -9,13 +9,13 @@
 
 
 # wrap mshell-aws-login around 1password-cli
-function mshell-aws-login-auto
-    eval (op signin awooo)
+function mshell-aws-login-auto() {
+    op signin awooo
 
-    set password (op get item xyhtvegrj5dhnfpdrg7b5myq3y | jq -r '.details.fields[] | select(.designation=="password").value')
-    set totp (op get totp nhvnmjoh3bhkbmyf25yrwzz6tu)
+    password=$(op get item xyhtvegrj5dhnfpdrg7b5myq3y | jq -r '.details.fields[] | select(.designation=="password").value')
+    totp=$(op get totp nhvnmjoh3bhkbmyf25yrwzz6tu)
 
-    set oldclipboard (pbpaste)
+    oldclipboard=$(pbpaste)
     echo $totp | pbcopy
     echo "Placed TOTP token ("$totp") on clipboard"
 
@@ -25,9 +25,9 @@ function mshell-aws-login-auto
 
     echo $oldclipboard | pbcopy
     echo "Restored clipboard"
-end
+}
 
-alias mshell-aws-login 'mshell-aws-login-auto'
+alias mshell-aws-login='mshell-aws-login-auto'
 
 # persist mshell-aws-login session
 source $HOME/.aws/aws_default_profile
@@ -36,7 +36,7 @@ source $HOME/.aws/aws_default_profile
 # bass source "/usr/local/opt/nvm/nvm.sh"
 
 # machine-specific git configuration
-set -gx GIT_AUTHOR_NAME "Harley Watson"
-set -gx GIT_AUTHOR_EMAIL "harley.watson@skyscanner.net"
-set -gx GIT_COMMITTER_NAME "$GIT_AUTHOR_NAME"
-set -gx GIT_COMMITTER_EMAIL "$GIT_AUTHOR_EMAIL"
+export GIT_AUTHOR_NAME="Harley Watson"
+export GIT_AUTHOR_EMAIL="harley.watson@skyscanner.net"
+export GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
+export GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
