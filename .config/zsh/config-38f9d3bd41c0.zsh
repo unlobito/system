@@ -10,7 +10,7 @@
 
 # wrap mshell-aws-login around 1password-cli
 function mshell-aws-login-auto() {
-    op signin awooo
+    eval $(op signin awooo)
 
     password=$(op get item xyhtvegrj5dhnfpdrg7b5myq3y | jq -r '.details.fields[] | select(.designation=="password").value')
     totp=$(op get totp nhvnmjoh3bhkbmyf25yrwzz6tu)
@@ -21,19 +21,14 @@ function mshell-aws-login-auto() {
 
     mshell-aws-login-adfs --mfa-type totp --username harleywatson --password $password
 
-    source ~/.aws/aws_default_profile
-
     echo $oldclipboard | pbcopy
     echo "Restored clipboard"
 }
 
-alias mshell-aws-login='mshell-aws-login-auto'
+# alias mshell-aws-login='mshell-aws-login-auto'
 
-# persist mshell-aws-login session
-source $HOME/.aws/aws_default_profile
-
-# export NVM_DIR="$HOME/.nvm"
-# bass source "/usr/local/opt/nvm/nvm.sh"
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
 
 # machine-specific git configuration
 export GIT_AUTHOR_NAME="Harley Watson"
