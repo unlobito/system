@@ -1,8 +1,6 @@
 {
-    "editor.wordWrap": "bounded",
     "workbench.colorTheme": "One Dark Pro",
     "editor.fontSize": 15,
-    "editor.wordWrap": "bounded",
     "editor.rulers": [
         80
     ],
@@ -14,4 +12,19 @@
     "gitlens.defaultDateStyle": "absolute",
     "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
+    "window.zoomLevel": 0,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.wordWrap": "on",
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "javascript.validate.enable": false,
+    "typescript.validate.enable": false,
+    "flow.useNPMPackagedFlow": false,
+    "editor.wordWrapColumn": 120,
+    "github.customPullRequestTitle": true,
+    "workbench.sideBar.location": "left",
+    "files.insertFinalNewline": true,
 }
