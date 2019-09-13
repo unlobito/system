@@ -14,9 +14,3 @@ export PATH=$HOME/bin/android-sdk/platform-tools:$PATH
 # Platform path setup
 export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
 export GOPATH="/Users/htw/w/go"
-
-# machine-specific git configuration
-export GIT_AUTHOR_NAME="Harley Watson"
-export GIT_AUTHOR_EMAIL="htw@lobi.to"
-export GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
-export GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"

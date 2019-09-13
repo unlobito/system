@@ -29,9 +29,3 @@ function mshell-aws-login-auto() {
 
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
-
-# machine-specific git configuration
-export GIT_AUTHOR_NAME="Harley Watson"
-export GIT_AUTHOR_EMAIL="harley.watson@skyscanner.net"
-export GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
-export GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
