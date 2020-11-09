@@ -1,0 +1,135 @@
+
+# Foundations
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+brew "mas"
+
+brew "zsh"
+
+brew "chezmoi"
+
+# Common Utilities
+## 1Password
+cask "1password"
+cask "1password-cli"
+
+## CLI Helpers
+brew "jq"
+brew "unrar"
+brew "wget"
+
+{{- if eq .chezmoi.hostname "annyong" }}
+brew "gnupg"
+brew "nmap"
+brew "youtube-dl"
+{{- end }}
+
+
+# Software Engineering
+brew "git-lfs"
+
+cask "0xed"
+cask "dash"
+cask "docker"
+cask "iterm2"
+cask "kdiff3"
+cask "sourcetree"
+cask "visual-studio-code"
+
+cask "wireshark"
+
+## Language: Python
+brew "pyenv"
+brew "pyenv-virtualenv"
+
+## Language: JavaScript
+brew "node"
+brew "nvm"
+brew "fswatch"
+brew "watch"
+brew "watchman"
+
+## Language: Java
+brew "jabba"
+brew "openjdk"
+brew "maven"
+cask "visualvm"
+cask "java"
+cask "oracle-jdk"
+
+## Language: PHP
+brew "composer"
+
+## Language: Go
+brew "go"
+
+## Language: Ruby
+brew "ruby-build"
+brew "rbenv"
+
+
+# iWork Default
+mas "GarageBand", id: 682658836
+mas "iClip", id: 468369783
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+
+
+# Applications
+## Browsers
+cask "firefox"
+cask "google-chrome"
+
+## Utilities
+cask "appcleaner"
+cask "insomnia"
+cask "spectacle"
+mas "Amphetamine", id: 937984704
+mas "Helium", id: 1054607607
+mas "PiPifier", id: 1160374471
+
+## Social
+cask "spotify"
+cask "telegram"
+mas "Textual IRC Client", id: 1262957439
+mas "Tweetbot", id: 1384080005
+
+
+tap "aws/tap"
+brew "aws/tap/aws-sam-cli"
+brew "awscli"
+brew "cfn-lint"
+
+{{- if eq .chezmoi.hostname "annyong" }}
+tap "heroku/brew"
+brew "heroku/brew/heroku"
+{{- end }}
+
+{{- if eq .chezmoi.hostname "HARLWATS02M" }}
+tap "data-platform/grappler-tools", "git@github.skyscannertools.net:data-platform/grappler-tools.git"
+brew "data-platform/grappler-tools/grapplercat"
+brew "data-platform/grappler-tools/grapplercat-autocomplete"
+
+tap "drone/drone"
+brew "drone/drone/drone@0.8"
+
+tap "mshell/mshell", "git@github.skyscannertools.net:mshell/homebrew-mshell.git"
+brew "mshell/mshell/artifactory-cli-login"
+brew "mshell/mshell/mshell-cut"
+brew "mshell/mshell/mshell-tools"
+brew "mshell/mshell/skyscanner-bundle"
+
+tap "snyk/tap"
+brew "snyk/tap/snyk"
+
+brew "sonar-scanner"
+
+brew "protobuf"
+
+cask "intellij-idea"
+cask "pycharm"
+cask "webstorm"
+{{- end }}

@@ -1,0 +1,5 @@
+{{- $email := promptString "email" -}}
+{{- $org := promptString "organization (lobito, skyscanner)" -}}
+[data]
+    email = "{{ $email }}"
+    org = "{{ $org }}"

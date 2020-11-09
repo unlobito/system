@@ -12,7 +12,7 @@
 function mshell-aws-login-auto() {
     eval $(op signin awooo)
 
-    password=$(op get item xyhtvegrj5dhnfpdrg7b5myq3y | jq -r '.details.fields[] | select(.designation=="password").value')
+    password={{- onepasswordDocument "xyhtvegrj5dhnfpdrg7b5myq3y" -}}
     totp=$(op get totp nhvnmjoh3bhkbmyf25yrwzz6tu)
 
     oldclipboard=$(pbpaste)
@@ -31,3 +31,14 @@ export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
 export JAVA_HOME=/Applications/IntelliJ\ IDEA.app/Contents/jbr/Contents/Home/
+
+[ -s "$JABBA_HOME/jabba.sh" ] && source "$JABBA_HOME/jabba.sh"
+
+
+# drone settings
+export DRONE_SERVER=https://drone-github.skyscannertools.net/
+export DRONE_TOKEN={{- onepasswordDocument "" -}}
+
+
+# dodge GitHub API ratelimiting on corp
+export HOMEBREW_GITHUB_API_TOKEN={{- onepasswordDocument "" -}}

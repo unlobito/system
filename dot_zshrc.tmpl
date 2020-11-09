@@ -25,6 +25,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Binary search path setup
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export GOPATH=$HOME/bin/go
 
 export MAKEOPTS="-j4"
 export EDITOR="nano"
@@ -54,3 +55,13 @@ fi
 if test -e "$localconfig.zsh"; then
     source "$localconfig.zsh"
 fi
+
+{{ if eq .chezmoi.os "darwin" }}
+{{ include "dot_zshrc_skyscanner.tmpl" }}
+{{ end }}
+{{ if eq .chezmoi.os "linux" }}
+{{ include ".zshrc_lobito" }}
+{{ end }}
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/grapplercat-autocomplete grapplercat

@@ -1,0 +1,70 @@
+{
+    "workbench.colorTheme": "One Dark Pro",
+    "editor.fontSize": 15,
+    "editor.rulers": [
+        80
+    ],
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlens.defaultDateStyle": "absolute",
+    "gitlens.hovers.currentLine.over": "line",
+    "window.zoomLevel": 0,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.wordWrap": "on",
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "javascript.validate.enable": false,
+    "typescript.validate.enable": false,
+    "editor.wordWrapColumn": 120,
+    "github.customPullRequestTitle": true,
+    "workbench.sideBar.location": "left",
+    "files.insertFinalNewline": true,
+{{- if eq .chezmoi.hostname "HARLWATS02M" }}
+    "editor.tabSize": 2,
+    "yaml.customTags": [
+        "!And",
+        "!And sequence",
+        "!If",
+        "!If sequence",
+        "!Not",
+        "!Not sequence",
+        "!Equals",
+        "!Equals sequence",
+        "!Or",
+        "!Or sequence",
+        "!FindInMap",
+        "!FindInMap sequence",
+        "!Base64",
+        "!Join",
+        "!Join sequence",
+        "!Cidr",
+        "!Ref",
+        "!Sub",
+        "!Sub sequence",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!ImportValue sequence",
+        "!Select",
+        "!Select sequence",
+        "!Split",
+        "!Split sequence"
+    ],
+    "yaml.validate": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.jediEnabled": false,
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "java.semanticHighlighting.enabled": true,
+    "python.languageServer": "Microsoft",
+    "java.configuration.checkProjectSettingsExclusions": false,
+{{- end}}
+}
