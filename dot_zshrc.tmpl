@@ -56,12 +56,9 @@ if test -e "$localconfig.zsh"; then
     source "$localconfig.zsh"
 fi
 
-{{ if eq .chezmoi.os "darwin" }}
+{{ if eq .org "skyscanner" }}
 {{ include "dot_zshrc_skyscanner.tmpl" }}
 {{ end }}
-{{ if eq .chezmoi.os "linux" }}
-{{ include ".zshrc_lobito" }}
+{{ if eq .org "unlobito" }}
+{{ include "dot_zshrc_unlobito.tmpl" }}
 {{ end }}
-
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/grapplercat-autocomplete grapplercat

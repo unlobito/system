@@ -19,13 +19,11 @@
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "javascript.validate.enable": false,
-    "typescript.validate.enable": false,
     "editor.wordWrapColumn": 120,
     "github.customPullRequestTitle": true,
     "workbench.sideBar.location": "left",
     "files.insertFinalNewline": true,
-{{- if eq .chezmoi.hostname "HARLWATS02M" }}
+{{ if eq .org "skyscanner" }}
     "editor.tabSize": 2,
     "yaml.customTags": [
         "!And",
@@ -67,4 +65,10 @@
     "python.languageServer": "Microsoft",
     "java.configuration.checkProjectSettingsExclusions": false,
 {{- end}}
+{{- if eq .org "unlobito" }}
+    "python.showStartPage": false,
+    "editor.tabSize": 2,
+    "python.defaultInterpreterPath": "/Users/htw/.pyenv/shims/python",
+    "outline.showVariables": false,
+{{- end }}
 }
