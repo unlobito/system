@@ -1,5 +1,9 @@
 README.md
 
 {{ if ne .org "skyscanner" -}}
-.zshrc_skyscanner
+.config/zsh/config-skyscanner.zsh
+{{- end }}
+
+{{ if ne .org "unlobito" -}}
+.config/zsh/config-unlobito.zsh
 {{- end }}

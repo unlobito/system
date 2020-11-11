@@ -11,25 +11,6 @@
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/grapplercat-autocomplete grapplercat
 
-# wrap mshell-aws-login around 1password-cli
-function mshell-aws-login-auto() {
-    eval $(op signin awooo)
-
-    password={{- onepasswordDocument "xyhtvegrj5dhnfpdrg7b5myq3y" -}}
-    totp=$(op get totp nhvnmjoh3bhkbmyf25yrwzz6tu)
-
-    oldclipboard=$(pbpaste)
-    echo $totp | pbcopy
-    echo "Placed TOTP token ("$totp") on clipboard"
-
-    mshell-aws-login-adfs --mfa-type totp --username harleywatson --password $password
-
-    echo $oldclipboard | pbcopy
-    echo "Restored clipboard"
-}
-
-# alias mshell-aws-login='mshell-aws-login-auto'
-
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
@@ -40,8 +21,7 @@ export JAVA_HOME=/Applications/IntelliJ\ IDEA.app/Contents/jbr/Contents/Home/
 
 # drone settings
 export DRONE_SERVER=https://drone-github.skyscannertools.net/
-export DRONE_TOKEN={{- onepasswordDocument "" -}}
-
+export DRONE_TOKEN={{ (onepasswordDetailsFields "mcdornn7hbhpdaq72qrsotzeie").password.value }}
 
 # dodge GitHub API ratelimiting on corp
-export HOMEBREW_GITHUB_API_TOKEN={{- onepasswordDocument "" -}}
+export HOMEBREW_GITHUB_API_TOKEN={{ (onepasswordDetailsFields "dufewjv4o5blrl43l2irg4yak4").password.value }}

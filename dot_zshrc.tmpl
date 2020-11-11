@@ -44,21 +44,9 @@ eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# Import environment-specific configuration based on MAC address
-localconfig="$HOME/.config/zsh/config-"$(ifconfig en0 | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}' | sed 's/://g')
-
-if test -e "$localconfig-secrets.zsh"; then
-    # Make secrets available to public config
-    source "$localconfig-secrets.zsh"
-fi
+# Import environment-specific configuration based on chezmoi org
+localconfig="$HOME/.config/zsh/config-{{- .org }}"
 
 if test -e "$localconfig.zsh"; then
     source "$localconfig.zsh"
 fi
-
-{{ if eq .org "skyscanner" }}
-{{ include "dot_zshrc_skyscanner.tmpl" }}
-{{ end }}
-{{ if eq .org "unlobito" }}
-{{ include "dot_zshrc_unlobito.tmpl" }}
-{{ end }}
