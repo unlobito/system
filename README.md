@@ -8,3 +8,13 @@ You'll need
 ```
 chezmoi init git@gitlab.canidae.systems:htw/dotfiles.git
 ```
+## Refresh
+First, validate which changes will be made.
+```
+chezmoi apply --dry-run --verbose | less
+```
+
+Then, apply changes to home directory.
+```
+chezmoi apply | less
+```
