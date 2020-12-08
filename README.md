@@ -18,3 +18,14 @@ Then, apply changes to home directory.
 ```
 chezmoi apply | less
 ```
+### Homebrew
+Check formula missing on system
+```
+brew bundle check -v --file .Brewfile
+```
+
+Check formula installed not in Brewfile
+```
+# Needs --force to actually perform, see --help
+ brew bundle cleanup --file .Brewfile
+```
