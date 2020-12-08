@@ -15,14 +15,28 @@ cask "1password"
 cask "1password-cli"
 
 ## CLI Helpers
+brew "telnet"
 brew "jq"
 brew "unrar"
 brew "wget"
+brew "rename"
+brew "pandoc"
+brew "git"
+brew "gh"
+brew "httpie"
+brew "mosh"
+brew "mtr"
+brew "pv"
 
-{{- if eq .chezmoi.hostname "annyong" }}
+
+{{- if eq .org "unlobito" }}
+brew "binwalk"
+brew "ffmpeg"
 brew "gnupg"
+brew "graphviz"
 brew "nmap"
 brew "youtube-dl"
+brew "influxdb"
 {{- end }}
 
 
@@ -36,8 +50,17 @@ cask "iterm2"
 cask "kdiff3"
 cask "sourcetree"
 cask "visual-studio-code"
-
 cask "wireshark"
+
+## NFC Dev
+{{- if eq .org "unlobito" }}
+brew "libffi"
+brew "libfreefare"
+brew "libnfc", args: ["HEAD"]
+brew "mfcuk"
+brew "mfoc", link: false
+
+{{- end }}
 
 ## Language: Python
 brew "pyenv"
@@ -53,10 +76,10 @@ brew "watchman"
 ## Language: Java
 brew "jabba"
 brew "openjdk"
+{{- if eq .org "skyscanner" }}
 brew "maven"
 cask "visualvm"
-cask "java"
-cask "oracle-jdk"
+{{- end }}
 
 ## Language: PHP
 brew "composer"
@@ -85,30 +108,91 @@ cask "google-chrome"
 
 ## Utilities
 cask "appcleaner"
+cask "archiver"
 cask "insomnia"
 cask "spectacle"
+cask "slack"
+cask "obs"
+cask "wireshark"
 mas "Amphetamine", id: 937984704
 mas "Helium", id: 1054607607
 mas "PiPifier", id: 1160374471
+mas "GoodNotes", id: 1444383602
+mas "Speedtest", id: 1153157709
+mas "Todoist", id: 585829637
+mas "Webcam Settings", id: 533696630
+mas "Xcode", id: 497799835
+
+{{- if eq .org "unlobito" }}
+cask "balenaetcher"
+cask "calibre"
+cask "db-browser-for-sqlite"
+cask "deluge"
+cask "electrum"
+cask "monero-wallet"
+cask "ngrok"
+cask "vmware-fusion"
+mas "Apple Configurator 2", id: 1037126344
+mas "Discovery", id: 1381004916
+mas "Joystick Mapper", id: 528183797
+mas "MQTTX", id: 1514074565
+mas "Microsoft Remote Desktop", id: 715768417
+mas "Money", id: 1185488696
+mas "Parcel", id: 639968404
+mas "Prepo", id: 476533227
+{{- end }}
+
+## Yubikey
+brew "yubico-piv-tool"
+brew "ykpers"
+mas "YubiKey Personalization Tool", id: 638161122
 
 ## Social
 cask "spotify"
+cask "steam"
 cask "telegram"
 mas "Textual IRC Client", id: 1262957439
 mas "Tweetbot", id: 1384080005
+mas "WhatsApp", id: 1147396723
 
+{{- if eq .org "unlobito" }}
+cask "mumble"
+cask "openemu"
+{{- end }}
 
+## Amateur Radio
+{{- if eq .org "unlobito" }}
+cask "cubicsdr"
+cask "gqrx"
+mas "EchoHam", id: 873302145
+{{- end }}
+
+## Home Automation
+cask "home-assistant"
+
+## Computer security
+{{- if eq .org "unlobito" }}
+cask "metasploit"
+cask "zenmap"
+{{- end }}
+
+# Platforms
+## AWS
 tap "aws/tap"
-brew "aws/tap/aws-sam-cli"
 brew "awscli"
+{{- if eq .org "skyscanner" }}
+brew "aws/tap/aws-sam-cli"
 brew "cfn-lint"
+{{- end }}
 
-{{- if eq .chezmoi.hostname "annyong" }}
+## Heroku
+{{- if eq .org "unlobito" }}
 tap "heroku/brew"
 brew "heroku/brew/heroku"
 {{- end }}
 
-{{- if eq .chezmoi.hostname "HARLWATS02M" }}
+## Skyscanner
+{{- if eq .org "skyscanner" }}
 tap "data-platform/grappler-tools", "git@github.skyscannertools.net:data-platform/grappler-tools.git"
 brew "data-platform/grappler-tools/grapplercat"
 brew "data-platform/grappler-tools/grapplercat-autocomplete"
