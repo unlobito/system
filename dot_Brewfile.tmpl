@@ -9,13 +9,18 @@ brew "zsh"
 
 brew "chezmoi"
 
+brew "ffmpeg"
+
 # Common Utilities
 ## 1Password
 cask "1password"
 cask "1password-cli"
+cask "transmit"
 
 ## CLI Helpers
+{{- if eq .org "unlobito" }}
 brew "telnet"
+{{- end }}
 brew "jq"
 brew "unrar"
 brew "wget"
@@ -27,6 +32,8 @@ brew "httpie"
 brew "mosh"
 brew "mtr"
 brew "pv"
+brew "youtube-dl"
+brew "picocom"
 
 
 {{- if eq .org "unlobito" }}
@@ -114,6 +121,8 @@ cask "spectacle"
 cask "slack"
 cask "obs"
 cask "wireshark"
+cask "plex"
+cask "vlc"
 mas "Amphetamine", id: 937984704
 mas "Helium", id: 1054607607
 mas "PiPifier", id: 1160374471
@@ -149,13 +158,13 @@ mas "YubiKey Personalization Tool", id: 638161122
 
 ## Social
 cask "spotify"
-cask "steam"
 cask "telegram"
 mas "Textual IRC Client", id: 1262957439
 mas "Tweetbot", id: 1384080005
-mas "WhatsApp", id: 1147396723
 
 {{- if eq .org "unlobito" }}
+cask "steam"
+mas "WhatsApp", id: 1147396723
 cask "mumble"
 cask "openemu"
 {{- end }}
@@ -171,6 +180,7 @@ mas "EchoHam", id: 873302145
 cask "home-assistant"
 
 ## Computer security
+brew "nmap"
 {{- if eq .org "unlobito" }}
 cask "metasploit"
 cask "zenmap"
@@ -212,8 +222,15 @@ brew "snyk/tap/snyk"
 brew "sonar-scanner"
 
 brew "protobuf"
+brew "vegeta"
+
+brew "kubectx"
+brew "k9s"
 
 cask "intellij-idea"
 cask "pycharm"
 cask "webstorm"
+
+cask "lastpass"
+cask "meetingbar"
 {{- end }}
