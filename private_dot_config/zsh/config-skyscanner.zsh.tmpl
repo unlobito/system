@@ -22,6 +22,3 @@ export JAVA_HOME=/Applications/IntelliJ\ IDEA.app/Contents/jbr/Contents/Home/
 # drone settings
 export DRONE_SERVER=https://drone-github.skyscannertools.net/
 export DRONE_TOKEN={{ (onepasswordDetailsFields "mcdornn7hbhpdaq72qrsotzeie").password.value }}
-
-# dodge GitHub API ratelimiting on corp
-export HOMEBREW_GITHUB_API_TOKEN={{ (onepasswordDetailsFields "dufewjv4o5blrl43l2irg4yak4").password.value }}
