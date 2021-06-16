@@ -23,6 +23,8 @@
     "github.customPullRequestTitle": true,
     "workbench.sideBar.location": "left",
     "files.insertFinalNewline": true,
+    "python.showStartPage": false,
+    "redhat.telemetry.enabled": true,
 {{ if eq .org "skyscanner" }}
     "editor.tabSize": 2,
     "yaml.customTags": [
@@ -64,6 +66,9 @@
     "java.semanticHighlighting.enabled": true,
     "python.languageServer": "Microsoft",
     "java.configuration.checkProjectSettingsExclusions": false,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
 {{- end}}
 {{- if eq .org "unlobito" }}
     "python.showStartPage": false,
