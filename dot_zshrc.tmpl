@@ -61,3 +61,8 @@ localconfig="$HOME/.config/zsh/config-{{- .org }}"
 if test -e "$localconfig.zsh"; then
     source "$localconfig.zsh"
 fi
+
+# Disable husky
+## https://typicode.github.io/husky/#/?id=bypass-hooks
+## husky pre-commit/push hooks cause IDE sadness with little immediate feedback
+export HUSKY=0
