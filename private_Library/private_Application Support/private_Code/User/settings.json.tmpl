@@ -12,19 +12,30 @@
     "gitlens.defaultDateStyle": "absolute",
     "gitlens.hovers.currentLine.over": "line",
     "window.zoomLevel": 0,
+    "editor.defaultFormatter": null,
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "editor.wordWrap": "on",
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.wordWrap": "on",
     "editor.wordWrapColumn": 120,
     "github.customPullRequestTitle": true,
     "workbench.sideBar.location": "left",
     "files.insertFinalNewline": true,
     "python.showStartPage": false,
     "redhat.telemetry.enabled": true,
+    "git.allowNoVerifyCommit": true,
 {{ if eq .org "skyscanner" }}
     "editor.tabSize": 2,
     "yaml.customTags": [
@@ -66,9 +77,6 @@
     "java.semanticHighlighting.enabled": true,
     "python.languageServer": "Microsoft",
     "java.configuration.checkProjectSettingsExclusions": false,
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter.notebook.ipynb"
-    },
 {{- end}}
 {{- if eq .org "unlobito" }}
     "python.showStartPage": false,
