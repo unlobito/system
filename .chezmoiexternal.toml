@@ -1,0 +1,18 @@
+[".oh-my-zsh"]
+    type = "archive"
+    url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
+[".oh-my-zsh/custom/themes/spaceship-prompt"]
+    type = "archive"
+    url = "https://github.com/spaceship-prompt/spaceship-prompt/archive/master.tar.gz"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
+[".oh-my-zsh/custom/plugins/op"]
+    type = "archive"
+    url = "https://github.com/sirhc/op.plugin.zsh/archive/ee373d4200ba16aa4338ff66742b56545a055031.tar.gz"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"

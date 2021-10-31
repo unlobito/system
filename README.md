@@ -5,7 +5,6 @@ You'll need
 1. SSH keys authorised in GitLab ([user profile](https://gitlab.canidae.systems/profile/keys) / [deploy keys](https://gitlab.canidae.systems/htw/dotfiles/-/settings/repository#js-deploy-keys-settings))
 2. Homebrew installed ((install)[https://brew.sh/])
 3. chezmoi installed (`$ brew install chezmoi`)
-4. Install spaceship to zsh ((install)[https://github.com/spaceship-prompt/spaceship-prompt#oh-my-zsh])
 
 ```
 chezmoi init git@gitlab.canidae.systems:htw/dotfiles.git
