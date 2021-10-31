@@ -26,7 +26,12 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # Homebrew
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+CPU=$(uname -p)
+if [[ "$CPU" == "arm" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+  eval "$(/usr/local/bin/brew shellenv)"
+fi
 export HOMEBREW_GITHUB_API_TOKEN={{ (onepasswordDetailsFields "4hkfgrtj2vgvdlcwxbhwsl2uva").password.value }}
 
 # Binary search path setup
