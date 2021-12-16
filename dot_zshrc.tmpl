@@ -48,7 +48,11 @@ alias beep='osascript -e "beep 1"'
 alias qr="qrcode-terminal"
 
 # asdf
+if [[ "$CPU" == "arm" ]]; then
+  . /opt/homebrew/opt/asdf/libexec/asdf.sh
+else
 . /usr/local/opt/asdf/libexec/asdf.sh
+fi
 eval "$(direnv hook zsh)"
 
 # Import environment-specific configuration based on chezmoi org
