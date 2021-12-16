@@ -10,3 +10,5 @@ README.md
 {{ if ne .org "unlobito" -}}
 .config/zsh/config-unlobito.zsh
 {{- end }}
+
+.p10k.zsh

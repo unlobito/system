@@ -2,6 +2,17 @@
 ## General macOS shell configuration ##
 #######################################
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
+
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv hook zsh)"
+
 # zsh configuration
 
 ## Path to your oh-my-zsh installation.
@@ -9,10 +20,7 @@ export ZSH="$HOME/.oh-my-zsh"
 DISABLE_AUTO_UPDATE="true"
 
 ## Theme configuration
-ZSH_THEME="spaceship-prompt/spaceship"
-
-SPACESHIP_PROMPT_SEPARATE_LINE="false"
-SPACESHIP_CHAR_SUFFIX=" "
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ## zsh options
 HIST_STAMPS="yyyy-mm-dd"
@@ -51,7 +59,7 @@ alias qr="qrcode-terminal"
 if [[ "$CPU" == "arm" ]]; then
   . /opt/homebrew/opt/asdf/libexec/asdf.sh
 else
-. /usr/local/opt/asdf/libexec/asdf.sh
+  . /usr/local/opt/asdf/libexec/asdf.sh
 fi
 eval "$(direnv hook zsh)"
 
@@ -69,3 +77,6 @@ export HUSKY=0
 
 # ansible credstash bug
 export no_proxy='*'
+
+# powerlevel10k configuration
+[[ ! -f {{ .chezmoi.sourceDir }}/.p10k.zsh ]] || source {{ .chezmoi.sourceDir }}/.p10k.zsh
