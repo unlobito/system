@@ -11,8 +11,15 @@
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/grapplercat-autocomplete grapplercat
 
+# nvm
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+
+CPU=$(uname -p)
+if [[ "$CPU" == "arm" ]]; then
+  . "/opt/homebrew/opt/nvm/nvm.sh"
+else
+  . "/usr/local/opt/nvm/nvm.sh"
+fi
 
 export JAVA_HOME=/Applications/IntelliJ\ IDEA.app/Contents/jbr/Contents/Home/
 
