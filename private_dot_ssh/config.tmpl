@@ -12,10 +12,6 @@ HashKnownHosts yes
 # https://undeadly.org/cgi?action=article&sid=20160114142733
 UseRoaming no
 
-# Offer identities through Secretive 
-Host *
-	IdentityAgent ~/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
-
 # Import local untracked configuration
 Include config-secrets
 
@@ -23,3 +19,7 @@ Host *.sys
 	Hostname %h.canidae.systems
 	Port 40404
 	User root
+
+# Offer identities through Secretive 
+Host *
+	IdentityAgent ~/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
