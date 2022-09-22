@@ -12,3 +12,4 @@ README.md
 {{- end }}
 
 .p10k.zsh
+.oh-my-zsh/custom/themes/powerlevel10k/**/*.zwc
