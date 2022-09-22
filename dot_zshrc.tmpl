@@ -81,3 +81,8 @@ export no_proxy='*'
 
 # powerlevel10k configuration
 [[ ! -f {{ .chezmoi.sourceDir }}/.p10k.zsh ]] || source {{ .chezmoi.sourceDir }}/.p10k.zsh
+
+# friday.sh
+if [[ -r $HOME/bin/friday.sh ]]; then
+  ($HOME/bin/friday.sh)
+fi
