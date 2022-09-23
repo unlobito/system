@@ -2,6 +2,11 @@
 ## General macOS shell configuration ##
 #######################################
 
+# friday.sh
+if [[ -r $HOME/bin/friday.sh ]]; then
+  ($HOME/bin/friday.sh)
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -81,8 +86,3 @@ export no_proxy='*'
 
 # powerlevel10k configuration
 [[ ! -f {{ .chezmoi.sourceDir }}/.p10k.zsh ]] || source {{ .chezmoi.sourceDir }}/.p10k.zsh
-
-# friday.sh
-if [[ -r $HOME/bin/friday.sh ]]; then
-  ($HOME/bin/friday.sh)
-fi
