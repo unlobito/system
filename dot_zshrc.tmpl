@@ -44,7 +44,7 @@ if [[ "$CPU" == "arm" ]]; then
 else
   eval "$(/usr/local/bin/brew shellenv)"
 fi
-export HOMEBREW_GITHUB_API_TOKEN={{ (onepasswordDetailsFields "4hkfgrtj2vgvdlcwxbhwsl2uva").password.value }}
+export HOMEBREW_GITHUB_API_TOKEN={{ (onepasswordDetailsFields "4hkfgrtj2vgvdlcwxbhwsl2uva" "i46hhi3cfdiirxiafymypej6gu" "awooo.1password.com").password.value }}
 
 # Binary search path setup
 export PATH=$HOME/bin:$PATH
