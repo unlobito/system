@@ -1,8 +1,6 @@
 
 # Foundations
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
 brew "mas"
 
 brew "zsh"
@@ -21,8 +19,9 @@ cask "transmit"
 {{- if eq .org "unlobito" }}
 brew "telnet"
 {{- end }}
+brew "binwalk"
 brew "jq"
-brew "unrar"
+brew "curl"
 brew "wget"
 brew "rename"
 brew "pandoc"
@@ -34,6 +33,8 @@ brew "mtr"
 brew "pv"
 brew "youtube-dl"
 brew "picocom"
+brew "gifsicle"
+brew "m1ddc"
 
 
 {{- if eq .org "unlobito" }}
@@ -51,9 +52,9 @@ brew "influxdb"
 brew "asdf"
 brew "git-lfs"
 
-cask "0xed"
 cask "dash"
 cask "docker"
+cask "hex-fiend"
 cask "iterm2"
 cask "kdiff3"
 cask "sourcetree"
@@ -105,22 +106,29 @@ cask "firefox"
 cask "google-chrome"
 
 ## Utilities
+cask "arq"
 cask "appcleaner"
 cask "archiver"
+cask "cameracontroller"
+cask "coconutbattery"
+cask "elgato-stream-deck"
+cask "handbrake"
+cask "inkscape"
+cask "monitorcontrol"
+cask "pdf-expert"
+cask "qflipper"
+cask "secretive"
+cask "thonny"
 cask "insomnia"
-cask "spectacle"
-cask "slack"
+cask "rectangle"
 cask "obs"
 cask "wireshark"
 cask "plex"
 cask "vlc"
 mas "Amphetamine", id: 937984704
-mas "Helium", id: 1054607607
-mas "PiPifier", id: 1160374471
-mas "GoodNotes", id: 1444383602
+mas "Brother P-touch Editor", id: 1453365242
 mas "Speedtest", id: 1153157709
-mas "Todoist", id: 585829637
-mas "Webcam Settings", id: 533696630
+mas "Parcel", id: 639968404
 mas "Xcode", id: 497799835
 
 {{- if eq .org "unlobito" }}
@@ -129,6 +137,7 @@ cask "calibre"
 cask "db-browser-for-sqlite"
 cask "deluge"
 cask "electrum"
+cask "slack"
 cask "monero-wallet"
 cask "ngrok"
 cask "vmware-fusion"
@@ -146,15 +155,15 @@ mas "Prepo", id: 476533227
 brew "age"
 
 ## Yubikey
+cask "yubico-yubikey-manager"
 brew "yubico-piv-tool"
 brew "ykpers"
+brew "ykman"
 mas "YubiKey Personalization Tool", id: 638161122
 
 ## Social
-cask "spotify"
 cask "telegram"
-mas "Textual IRC Client", id: 1262957439
-mas "Tweetbot", id: 1384080005
+mas "Ivory", id: 6444602274
 
 {{- if eq .org "unlobito" }}
 cask "steam"
@@ -197,18 +206,11 @@ brew "heroku/brew/heroku"
 
 ## Skyscanner
 {{- if eq .org "skyscanner" }}
-tap "data-platform/grappler-tools", "git@github.skyscannertools.net:data-platform/grappler-tools.git"
-brew "data-platform/grappler-tools/grapplercat"
-brew "data-platform/grappler-tools/grapplercat-autocomplete"
-
-tap "drone/drone"
-brew "drone/drone/drone@0.8"
-
 tap "mshell/mshell", "git@github.skyscannertools.net:mshell/homebrew-mshell.git"
-brew "mshell/mshell/artifactory-cli-login"
-brew "mshell/mshell/mshell-cut"
-brew "mshell/mshell/mshell-tools"
 brew "mshell/mshell/skyscanner-bundle"
+brew "mshell/mshell/artifactory-cli-login"
+
+brew "pinentry"
 
 tap "snyk/tap"
 brew "snyk/tap/snyk"
@@ -222,8 +224,6 @@ brew "kubectx"
 brew "k9s"
 
 cask "intellij-idea"
-cask "pycharm"
-cask "webstorm"
 
 cask "lastpass"
 cask "meetingbar"
