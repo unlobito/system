@@ -48,6 +48,7 @@ brew "influxdb"
 
 
 # Software Engineering
+brew "asdf"
 brew "git-lfs"
 
 cask "0xed"
@@ -81,22 +82,12 @@ brew "watch"
 brew "watchman"
 
 ## Language: Java
-brew "jabba"
-brew "openjdk"
 {{- if eq .org "skyscanner" }}
-brew "maven"
 cask "visualvm"
 {{- end }}
 
-## Language: PHP
-brew "composer"
-
 ## Language: Go
 brew "go"
-
-## Language: Ruby
-brew "ruby-build"
-brew "rbenv"
 
 
 # iWork Default
