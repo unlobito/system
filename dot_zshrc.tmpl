@@ -69,8 +69,10 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+{{- if eq .org "skyscanner" }}
 # asdf java
 . ~/.asdf/plugins/java/set-java-home.zsh
+{{- end }}
 
 # Import environment-specific configuration based on chezmoi org
 localconfig="$HOME/.config/zsh/config-{{- .org }}"

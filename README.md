@@ -33,5 +33,5 @@ brew bundle install -v --file .Brewfile
 Check formula installed not in Brewfile
 ```
 # Needs --force to actually perform, see --help
- brew bundle cleanup --file .Brewfile
+brew bundle cleanup --file .Brewfile
 ```

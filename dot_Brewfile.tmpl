@@ -2,12 +2,9 @@
 # Foundations
 tap "homebrew/bundle"
 brew "mas"
-
 brew "zsh"
-
 brew "chezmoi"
 
-brew "ffmpeg"
 
 # Common Utilities
 ## 1Password
@@ -20,31 +17,34 @@ cask "transmit"
 brew "telnet"
 {{- end }}
 brew "binwalk"
-brew "jq"
 brew "curl"
-brew "wget"
-brew "rename"
-brew "pandoc"
-brew "git"
 brew "gh"
-brew "httpie"
+brew "gifsicle"
+brew "git"
+brew "htop"
+brew "jq"
+brew "lynx"
+brew "m1ddc"
+brew "magic-wormhole"
 brew "mosh"
 brew "mtr"
-brew "pv"
-brew "youtube-dl"
+brew "pandoc"
 brew "picocom"
-brew "gifsicle"
-brew "m1ddc"
-
+brew "pv"
+brew "rclone"
+brew "screenresolution"
+brew "wget"
+brew "youtube-dl"
 
 {{- if eq .org "unlobito" }}
 brew "binwalk"
+brew "esptool"
 brew "ffmpeg"
 brew "gnupg"
+brew "goaccess"
 brew "graphviz"
 brew "nmap"
-brew "youtube-dl"
-brew "influxdb"
+brew "yt-dlp"
 {{- end }}
 
 
@@ -52,23 +52,27 @@ brew "influxdb"
 brew "asdf"
 brew "git-lfs"
 
+brew "terraform"
 cask "dash"
 cask "docker"
 cask "hex-fiend"
+cask "hex-fiend"
 cask "iterm2"
-cask "kdiff3"
 cask "sourcetree"
 cask "visual-studio-code"
 cask "wireshark"
 
 ## NFC Dev
 {{- if eq .org "unlobito" }}
+brew "hackrf"
 brew "libffi"
 brew "libfreefare"
 brew "libnfc", args: ["HEAD"]
 brew "mfcuk"
 brew "mfoc", link: false
 
+tap "rfidresearchgroup/proxmark3"
+brew "rfidresearchgroup/proxmark3/proxmark3"
 {{- end }}
 
 ## Language: Python
@@ -82,8 +86,12 @@ brew "fswatch"
 brew "watch"
 brew "watchman"
 
-## Language: Java
+{{- if eq .org "unlobito" }}
+brew "deno"
+{{- end }}
+
 {{- if eq .org "skyscanner" }}
+## Language: Java
 cask "visualvm"
 {{- end }}
 
@@ -106,55 +114,42 @@ cask "firefox"
 cask "google-chrome"
 
 ## Utilities
-cask "arq"
 cask "appcleaner"
 cask "archiver"
+cask "arq"
+cask "bartender"
 cask "cameracontroller"
 cask "coconutbattery"
 cask "elgato-stream-deck"
 cask "handbrake"
 cask "inkscape"
+cask "insomnia"
 cask "monitorcontrol"
+cask "obs"
 cask "pdf-expert"
+cask "plex"
 cask "qflipper"
+cask "rectangle"
 cask "secretive"
 cask "thonny"
-cask "insomnia"
-cask "rectangle"
-cask "obs"
-cask "wireshark"
-cask "plex"
 cask "vlc"
+cask "wireshark"
 mas "Amphetamine", id: 937984704
 mas "Brother P-touch Editor", id: 1453365242
 mas "Speedtest", id: 1153157709
-mas "Parcel", id: 639968404
 mas "Xcode", id: 497799835
-
-{{- if eq .org "unlobito" }}
-cask "balenaetcher"
-cask "calibre"
-cask "db-browser-for-sqlite"
-cask "deluge"
-cask "electrum"
-cask "slack"
-cask "monero-wallet"
-cask "ngrok"
-cask "vmware-fusion"
-mas "Apple Configurator 2", id: 1037126344
-mas "Discovery", id: 1381004916
-mas "Joystick Mapper", id: 528183797
-mas "MQTTX", id: 1514074565
-mas "Microsoft Remote Desktop", id: 715768417
-mas "Money", id: 1185488696
-mas "Parcel", id: 639968404
-mas "Prepo", id: 476533227
-{{- end }}
 
 ## age
 brew "age"
 
+{{- if eq .org "unlobito" }}
+## numworks
+tap "numworks/tap"
+brew "numworks/tap/arm-none-eabi-gcc"
+{{- end }}
+
 ## Yubikey
+cask "yubico-authenticator"
 cask "yubico-yubikey-manager"
 brew "yubico-piv-tool"
 brew "ykpers"
@@ -166,16 +161,53 @@ cask "telegram"
 mas "Ivory", id: 6444602274
 
 {{- if eq .org "unlobito" }}
+brew "qdmr"
+brew "platformio"
+
+cask "arduino"
+cask "audacity"
+cask "balenaetcher"
+cask "calibre"
+cask "chirp"
+cask "discord"
+cask "electrum"
+cask "ghidra"
+cask "keepassxc"
+cask "keybase"
+cask "knockknock"
+cask "krisp"
+cask "little-snitch"
+cask "monero-wallet"
+cask "nordvpn"
+cask "openscad"
+cask "oscar"
+cask "slack"
 cask "steam"
+cask "syncthing"
+cask "teamspeak-client"
+cask "tor-browser"
+cask "transmission"
+cask "utm"
+cask "veracrypt"
+
+mas "Apple Configurator", id: 1037126344
+mas "MQTTX", id: 1514074565
+mas "Smart Card Utility", id: 1444710309
 mas "WhatsApp", id: 1147396723
-cask "mumble"
-cask "openemu"
+
+tap "homebrew/cask-versions"
+cask "signal-beta"
 {{- end }}
 
 ## Amateur Radio
 {{- if eq .org "unlobito" }}
+brew "rtl_433"
+brew "soapysdr"
+brew "urh"
+
 cask "cubicsdr"
 cask "gqrx"
+
 mas "EchoHam", id: 873302145
 {{- end }}
 
@@ -184,10 +216,6 @@ mas "Home Assistant", id: 1099568401
 
 ## Computer security
 brew "nmap"
-{{- if eq .org "unlobito" }}
-cask "metasploit"
-cask "zenmap"
-{{- end }}
 
 # Platforms
 ## AWS
@@ -196,12 +224,6 @@ brew "awscli"
 {{- if eq .org "skyscanner" }}
 brew "aws/tap/aws-sam-cli"
 brew "cfn-lint"
-{{- end }}
-
-## Heroku
-{{- if eq .org "unlobito" }}
-tap "heroku/brew"
-brew "heroku/brew/heroku"
 {{- end }}
 
 ## Skyscanner
@@ -225,6 +247,5 @@ brew "k9s"
 
 cask "intellij-idea"
 
-cask "lastpass"
 cask "meetingbar"
 {{- end }}
