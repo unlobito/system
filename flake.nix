@@ -1,5 +1,5 @@
 {
-  description = "Example Darwin system flake";
+  description = "nix system flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -13,12 +13,22 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, darwin, ... }: {
+  outputs = {
+    self,
+    darwin,
+    home-manager,
+    ...
+  } @ inputs: {
     darwinConfigurations."bobloblaw" = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [ 
-        home-manager.darwinModules.home-manager
+        ./profiles/personal.nix
         ./modules/darwin
+        home-manager.darwinModules.home-manager {
+          home-manager.useUserPackages = true;
+          home-manager.useGlobalPkgs = true;
+          home-manager.users.htw = import ./modules/home-manager;
+        }
       ];
     };
   };
