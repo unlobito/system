@@ -1,6 +1,7 @@
 {...}: {
-  system.defaults = {
+  security.pam.enableSudoTouchIdAuth = true;
 
+  system.defaults = {
     dock = {
       autohide = true;
       mru-spaces = false;
