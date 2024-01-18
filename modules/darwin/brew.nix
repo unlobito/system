@@ -2,8 +2,13 @@
   homebrew = {
     enable = true;
 
+    onActivation = {
+      autoUpdate = true;
+    };
+
     taps = [
       "1password/tap"
+      "aws/tap"
       "homebrew/bundle"
       "homebrew/cask-versions"
     ];
@@ -11,31 +16,20 @@
     brews = [
       "age"
       "awscli"
-      "binwalk"
       "chezmoi"
       "curl"
-      "deno"
-      "esptool"
-      "ffmpeg"
       "fswatch"
       "gh"
       "gifsicle"
       "git"
       "git-lfs"
-      "gnupg"
       "go"
-      "goaccess"
-      "graphviz"
-      "hackrf"
       "htop"
       "jq"
-      "libffi"
-      "libfreefare"
       "lynx"
       "m1ddc"
       "magic-wormhole"
       "mas"
-      "mfcuk"
       "mosh"
       "mtr"
       "nmap"
@@ -44,19 +38,12 @@
       "nvm"
       "pandoc"
       "picocom"
-      "platformio"
       "pv"
       "pyenv"
       "pyenv-virtualenv"
-      "qdmr"
       "rclone"
-      "rfidresearchgroup/proxmark3/proxmark3"
-      "rtl_433"
       "screenresolution"
-      "soapysdr"
-      "telnet"
       "terraform"
-      "urh"
       "watch"
       "watchman"
       "wget"
@@ -71,64 +58,48 @@
       "1password-cli"
       "appcleaner"
       "archiver"
-      "arduino"
       "arq"
-      "audacity"
-      "balenaetcher"
       "bartender"
-      "calibre"
       "cameracontroller"
-      "chirp"
       "coconutbattery"
-      "cubicsdr"
       "dash"
-      "discord"
       "docker"
-      "electrum"
       "elgato-stream-deck"
       "firefox"
-      "ghidra"
       "google-chrome"
-      "gqrx"
       "handbrake"
       "hex-fiend"
       "inkscape"
       "insomnia"
       "iterm2"
-      "keepassxc"
-      "keybase"
-      "knockknock"
-      "krisp"
-      "little-snitch"
-      "monero-wallet"
       "monitorcontrol"
-      "nordvpn"
       "obs"
-      "openscad"
-      "oscar"
       "pdf-expert"
-      "plex"
-      "qflipper"
       "rectangle"
       "secretive"
-      "signal-beta"
-      "slack"
       "sourcetree"
-      "steam"
-      "syncthing"
-      "teamspeak-client"
-      "telegram"
-      "thonny"
-      "tor-browser"
-      "transmission"
-      "transmit"
-      "utm"
-      "veracrypt"
       "visual-studio-code"
       "vlc"
       "wireshark"
       "yubico-authenticator"
       "yubico-yubikey-manager"
     ];
+
+
+    masApps = {
+      "GarageBand" = 682658836;
+      "iClip" = 468369783;
+      "iMovie" = 408981434;
+      "Keynote" = 409183694;
+      "Numbers" = 409203825;
+      "Pages" = 409201541;
+      "Amphetamine" = 937984704;
+      "Brother P-touch Editor" = 1453365242;
+      "Home Assistant" = 1099568401;
+      "Ivory" = 6444602274;
+      "Speedtest" = 1153157709;
+      "Xcode" = 497799835;
+      "YubiKey Personalization Tool" = 638161122;
+    };
   };
 }
