@@ -23,6 +23,20 @@
       system = "aarch64-darwin";
       modules = [ 
         ./profiles/personal.nix
+        ./modules/darwin/personal
+        ./modules/darwin
+        home-manager.darwinModules.home-manager {
+          home-manager.useUserPackages = true;
+          home-manager.useGlobalPkgs = true;
+          home-manager.users.htw = import ./modules/home-manager;
+        }
+      ];
+    };
+    darwinConfigurations."M-LY5DPFDJKJ" = darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
+      modules = [ 
+        ./profiles/work.nix
+        ./modules/darwin/work
         ./modules/darwin
         home-manager.darwinModules.home-manager {
           home-manager.useUserPackages = true;
