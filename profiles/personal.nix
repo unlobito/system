@@ -1,3 +1,3 @@
-{...}: {
-    user.name = "htw";
+{ ... }: {
+  user.name = "htw";
 }

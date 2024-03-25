@@ -32,6 +32,7 @@ $ darwin-rebuild switch --flake .
 ## notes
 ### influences
 * https://github.com/kclejeune/system
+* https://github.com/i077/system
 * https://xyno.space/post/nix-darwin-introduction
 * https://nixcademy.com/2024/01/15/nix-on-macos/
 

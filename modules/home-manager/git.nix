@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.git = {
     enable = true;
     userName = "Harley Watson";
@@ -19,9 +19,9 @@
 
   home.file = {
     ".config/git/config-skyscanner.inc".text = ''
-    [user]
-      name = Harley Watson
-      email = harley.watson@skyscanner.net
+      [user]
+        name = Harley Watson
+        email = harley.watson@skyscanner.net
     '';
   };
 }
