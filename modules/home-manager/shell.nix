@@ -11,6 +11,8 @@
           eval "$(/opt/homebrew/bin/brew shellenv)"
         fi
       ''}
+      
+      . "${pkgs.asdf-vm}/share/asdf-vm/asdf.sh"
     '';
 
     plugins = [
