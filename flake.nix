@@ -41,7 +41,7 @@
         home-manager.darwinModules.home-manager {
           home-manager.useUserPackages = true;
           home-manager.useGlobalPkgs = true;
-          home-manager.users.htw = import ./modules/home-manager;
+          home-manager.users.harleywatson = import ./modules/home-manager;
         }
       ];
     };

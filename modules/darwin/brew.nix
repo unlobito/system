@@ -34,7 +34,6 @@
       "mtr"
       "nmap"
       "node"
-      "numworks/tap/arm-none-eabi-gcc"
       "nvm"
       "pandoc"
       "picocom"

@@ -12,7 +12,7 @@
     ];
 
     brews = [
-      "aws/tap/aws-sam-cli"
+      "aws-sam-cli"
       "cfn-lint"
       "k9s"
       "kubectx"
