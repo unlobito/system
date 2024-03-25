@@ -1,7 +1,7 @@
 # system
 
 ## 🏃 get started
-first, authorise SSH keys in GitLab ([user profile](https://gitlab.canidae.systems/profile/keys) / [deploy keys](https://gitlab.canidae.systems/htw/dotfiles/-/settings/repository#js-deploy-keys-settings)).
+first, authorise SSH keys in GitLab ([user profile](https://gitlab.canidae.systems/profile/keys) / [deploy keys](https://gitlab.canidae.systems/htw/system/-/settings/repository#js-deploy-keys-settings)).
 
 second, install nix using the [DeterminateSystems one-liner](https://github.com/DeterminateSystems/nix-installer?tab=readme-ov-file#usage):
 
