@@ -8,11 +8,6 @@
       init.defaultBranch = "main";
       pull.rebase = false;
       push.autoSetupRemote = true;
-      includeIf = {
-        "gitdir:~/w/skyscanner/" = {
-          path = "config-skyscanner.inc";
-        };
-      };
     };
 
     ignores = [
@@ -21,14 +16,17 @@
       ".envrc"
       ".tool-versions"
     ];
-  };
 
-
-  home.file = {
-    ".config/git/config-skyscanner.inc".text = ''
-      [user]
-        name = Harley Watson
-        email = harley.watson@skyscanner.net
-    '';
+    includes = [
+      {
+        condition = "gitdir:~/w/skyscanner/";
+        contents = {
+          user = {
+            name = "Harley Watson";
+            email = "harley.watson@skyscanner.net";
+          };
+        };
+      }
+    ];
   };
 }
