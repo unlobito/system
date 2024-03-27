@@ -29,7 +29,12 @@
           {
             home-manager.useUserPackages = true;
             home-manager.useGlobalPkgs = true;
-            home-manager.users.htw = import ./modules/home-manager;
+            home-manager.users.htw = {
+              imports = [
+                (import ./modules/home-manager/personal)
+                (import ./modules/home-manager)
+              ];
+            };
           }
         ];
       };

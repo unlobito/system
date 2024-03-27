@@ -12,14 +12,6 @@
     ];
 
     brews = [
-      "binwalk"
-      "deno"
-      "esptool"
-      "ffmpeg"
-      "gnupg"
-      "goaccess"
-      "graphviz"
-      "hackrf"
       "libffi"
       "libfreefare"
       {
