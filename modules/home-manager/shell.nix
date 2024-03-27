@@ -10,8 +10,9 @@
           eval "$(/opt/homebrew/bin/brew shellenv)"
         fi
       ''}
-      
+
       . "${pkgs.asdf-vm}/share/asdf-vm/asdf.sh"
+      source "${config.xdg.configHome}/asdf-direnv/zshrc"
     '';
 
     plugins = [

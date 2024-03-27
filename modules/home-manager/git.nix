@@ -14,6 +14,13 @@
         };
       };
     };
+
+    ignores = [
+      ".DS_Store"
+      ".direnv"
+      ".envrc"
+      ".tool-versions"
+    ];
   };
 
 
