@@ -2,6 +2,7 @@
 {
   imports = [
     ./1password.nix
+    ./direnv.nix
     ./git.nix
     ./shell.nix
   ];
