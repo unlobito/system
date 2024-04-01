@@ -38,8 +38,6 @@
       "pandoc"
       "picocom"
       "pv"
-      "pyenv"
-      "pyenv-virtualenv"
       "rclone"
       "screenresolution"
       "terraform"
