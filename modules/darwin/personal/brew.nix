@@ -1,11 +1,5 @@
 { ... }: {
   homebrew = {
-    enable = true;
-
-    onActivation = {
-      cleanup = "uninstall";
-    };
-
     taps = [
       "rfidresearchgroup/proxmark3"
       "numworks/tap"

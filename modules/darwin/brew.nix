@@ -4,6 +4,11 @@
 
     onActivation = {
       autoUpdate = true;
+      cleanup = "uninstall";
+    };
+
+    global = {
+      brewfile = true;
     };
 
     taps = [
