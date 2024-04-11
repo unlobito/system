@@ -4,6 +4,14 @@
 , ...
 }: {
   programs.zsh = {
+    history = {
+      extended = true;
+    };
+
+    historySubstringSearch = {
+      enable = true;
+    };
+
     initExtraBeforeCompInit = ''
       # p10k instant prompt
       local P10K_INSTANT_PROMPT="${config.xdg.cacheHome}/p10k-instant-prompt-''${(%):-%n}.zsh"
