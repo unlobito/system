@@ -45,6 +45,11 @@
         src = lib.cleanSource ./zsh-plugins/friday;
         file = "friday.sh";
       }
+      {
+        name = "dirchanger";
+        src = lib.cleanSource ./zsh-plugins/dirchanger;
+        file = "dirchanger.zsh";
+      }
     ];
   };
 }
