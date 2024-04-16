@@ -11,8 +11,13 @@
     # Necessary for using flakes on this system.
     experimental-features = "nix-command flakes";
 
-    substituters = [ https://devenv.cachix.org ];
-    trusted-public-keys = [ devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw= ];
+    substituters = [
+      https://devenv.cachix.org
+    ];
+    
+    trusted-public-keys = [
+      devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=
+    ];
   };
 
   # Used for backwards compatibility, please read the changelog before changing.
