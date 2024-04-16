@@ -26,6 +26,7 @@
     nvd
     nixpkgs-fmt
 
+    devenv
     asdf-vm
   ];
 
