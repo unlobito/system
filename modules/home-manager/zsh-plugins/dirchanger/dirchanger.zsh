@@ -35,7 +35,7 @@ dirchanger() {
     local urlpath=$(extract_path_from_url "$1")
 
     # Construct the local directory path
-    local local_dir="$HOME/w/$urlpath"
+    local local_dir="$HOME/w/skyscanner/$urlpath"
 
     # Check if the directory exists
     if [[ ! -d "$local_dir" ]]; then
