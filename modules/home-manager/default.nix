@@ -2,6 +2,7 @@
 {
   imports = [
     ./1password.nix
+    ./asdf-vm.nix
     ./direnv.nix
     ./git.nix
     ./shell.nix
@@ -27,7 +28,6 @@
     nixpkgs-fmt
 
     devenv
-    asdf-vm
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
