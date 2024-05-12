@@ -2,7 +2,10 @@
   description = "nix system flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    # NOTE: Replace "nixos-23.11" with that which is in system.stateVersion of
+    # configuration.nix. You can also use latter versions if you wish to
+    # upgrade.
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     darwin = {
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -15,6 +18,7 @@
 
   outputs =
     { self
+    , nixpkgs
     , darwin
     , home-manager
     , ...
@@ -49,6 +53,19 @@
             home-manager.useUserPackages = true;
             home-manager.useGlobalPkgs = true;
             home-manager.users.harleywatson = import ./modules/home-manager;
+          }
+        ];
+      };
+      # NOTE: 'nixos' is the default hostname set by the installer
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        # NOTE: Change this to aarch64-linux if you are on ARM
+        system = "x86_64-linux";
+        modules = [
+          ./configuration.nix
+          {
+            nix = {
+              settings.experimental-features = [ "nix-command" "flakes" ];
+            };
           }
         ];
       };
