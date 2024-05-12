@@ -59,8 +59,7 @@
           }
         ];
       };
-      # NOTE: 'nixos' is the default hostname set by the installer
-      nixosConfigurations.nixos = nixos-unstable.lib.nixosSystem {
+      nixosConfigurations.thonkpad = nixos-unstable.lib.nixosSystem {
         # NOTE: Change this to aarch64-linux if you are on ARM
         system = "x86_64-linux";
         modules = [
