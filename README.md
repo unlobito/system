@@ -1,6 +1,6 @@
 # system
 
-## 🏃 get started
+## 🏃 get started (on macOS)
 first, authorise SSH keys in GitLab ([user profile](https://gitlab.canidae.systems/profile/keys) / [deploy keys](https://gitlab.canidae.systems/htw/system/-/settings/repository#js-deploy-keys-settings)).
 
 second, install nix using the [DeterminateSystems one-liner](https://github.com/DeterminateSystems/nix-installer?tab=readme-ov-file#usage):
@@ -16,7 +16,7 @@ $ nix run nixpkgs#hello
 
 fourth, check [`flake.nix`](flake.nix): make sure there's a `darwinConfigurations` section for the current hostname
 
-last but not least, once you're ready to commit:
+last, but not least, once you're ready to commit:
 ```bash
 $ nix run nix-darwin -- switch --flake .
 ```
@@ -46,12 +46,40 @@ $ brew bundle cleanup
 ```
 
 
+## 🏃 get started (on NixOS)
+first, [download and install NixOS](https://nixos.org/download/).
+
+second, authorise SSH keys in GitLab ([user profile](https://gitlab.canidae.systems/profile/keys) / [deploy keys](https://gitlab.canidae.systems/htw/system/-/settings/repository#js-deploy-keys-settings)).
+
+third, move `/etc/nixos` to our home directory:
+```bash
+$ sudo mv /etc/nixos ~/system && sudo chown -R $USER ~/system
+```
+
+fourth, gently initialise the git repository while preserving `nixos-generate-config` output:
+```bash
+# this could probably be less convoluted?
+$ mv {hardware-configuration.nix,configuration.nix} ..
+$ git init && git remote add origin git@gitlab.canidae.systems:htw/system.git && git fetch origin
+$ git reset --hard origin/main
+$ mv ../hardware-configuration.nix ./modules/hardware/$(hostname).nix
+```
+
+fifth, check [`flake.nix`](flake.nix): make sure there's a `nixosConfigurations` section for the current hostname (use `../configuration.nix` as a reference)
+
+last, but not least, once you're ready to commit:
+```bash
+$ sudo nixos-rebuild switch --flake .
+```
+
+
 ## notes
 ### influences
 * https://github.com/kclejeune/system
 * https://github.com/i077/system
 * https://xyno.space/post/nix-darwin-introduction
 * https://nixcademy.com/2024/01/15/nix-on-macos/
+* https://nixos.asia/en/nixos-install-flake
 
 
 ### further reading
