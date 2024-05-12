@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "ehci_pci" "ahci" "firewire_ohci" "usb_storage" "sd_mod" "sr_mod" "sdhci_pci" ];
@@ -14,7 +15,8 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/cafffede-cdb9-4dc7-8f0a-ea7b384a29fb";
+    {
+      device = "/dev/disk/by-uuid/cafffede-cdb9-4dc7-8f0a-ea7b384a29fb";
       fsType = "ext4";
     };
 
