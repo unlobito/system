@@ -14,13 +14,11 @@
       enable = true;
     };
 
-    initExtraBeforeCompInit = ''
+    initExtra = ''
       # p10k instant prompt
       local P10K_INSTANT_PROMPT="${config.xdg.cacheHome}/p10k-instant-prompt-''${(%):-%n}.zsh"
       [[ ! -r "$P10K_INSTANT_PROMPT" ]] || source "$P10K_INSTANT_PROMPT"
-    '';
 
-    initExtra = ''
       ${lib.optionalString pkgs.stdenvNoCC.isDarwin ''
         if [[ -d /opt/homebrew ]]; then
           eval "$(/opt/homebrew/bin/brew shellenv)"
