@@ -61,13 +61,25 @@
         # NOTE: Change this to aarch64-linux if you are on ARM
         system = "x86_64-linux";
         modules = [
+          ./profiles/personal.nix
           ./modules/hardware/thonkpad.nix
           ./modules/nixos/thonkpad.nix
+          home-manager.darwinModules.home-manager
           {
-            nix = {
-              settings.experimental-features = [ "nix-command" "flakes" ];
+            home-manager.useUserPackages = true;
+            home-manager.useGlobalPkgs = true;
+            home-manager.users.htw = {
+              imports = [
+                (import ./modules/home-manager/personal)
+                (import ./modules/home-manager)
+              ];
             };
           }
+          # {
+          #   nix = {
+          #     settings.experimental-features = [ "nix-command" "flakes" ];
+          #   };
+          # }
         ];
       };
     };
