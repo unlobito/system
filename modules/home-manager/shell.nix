@@ -20,9 +20,16 @@
       [[ ! -r "$P10K_INSTANT_PROMPT" ]] || source "$P10K_INSTANT_PROMPT"
 
       ${lib.optionalString pkgs.stdenvNoCC.isDarwin ''
-        if [[ -d /opt/homebrew ]]; then
-          eval "$(/opt/homebrew/bin/brew shellenv)"
-        fi
+        ${lib.optionalString pkgs.stdenvNoCC.hostPlatform.isAarch64 ''
+          if [[ -d /opt/homebrew ]]; then
+            eval "$(/opt/homebrew/bin/brew shellenv)"
+          fi
+        ''}
+        ${lib.optionalString pkgs.stdenvNoCC.hostPlatform.isx86_64 ''
+          if [[ -f /usr/local/bin/brew ]]; then
+            eval "$(/usr/local/bin/brew shellenv)"
+          fi
+        ''}
       ''}
     '';
 
