@@ -61,7 +61,8 @@
         # NOTE: Change this to aarch64-linux if you are on ARM
         system = "x86_64-linux";
         modules = [
-          ./configuration.nix
+          ./modules/hardware/thonkpad.nix
+          ./modules/nixos/thonkpad.nix
           {
             nix = {
               settings.experimental-features = [ "nix-command" "flakes" ];
