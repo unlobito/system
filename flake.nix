@@ -2,8 +2,12 @@
   description = "nix system flake";
 
   inputs = {
+    # packages
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    # systems
+    nixos-hardware.url = "github:nixos/nixos-hardware";
     darwin = {
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -63,6 +67,7 @@
           ./profiles/personal.nix
           ./modules/hardware/thonkpad.nix
           ./modules/nixos/thonkpad.nix
+          inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t410
           home-manager.nixosModules.home-manager
           {
             home-manager.useUserPackages = true;
