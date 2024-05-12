@@ -64,7 +64,7 @@
           ./profiles/personal.nix
           ./modules/hardware/thonkpad.nix
           ./modules/nixos/thonkpad.nix
-          home-manager.darwinModules.home-manager
+          home-manager.nixosModules.home-manager
           {
             home-manager.useUserPackages = true;
             home-manager.useGlobalPkgs = true;
@@ -75,11 +75,6 @@
               ];
             };
           }
-          # {
-          #   nix = {
-          #     settings.experimental-features = [ "nix-command" "flakes" ];
-          #   };
-          # }
         ];
       };
     };
