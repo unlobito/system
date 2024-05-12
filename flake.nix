@@ -2,7 +2,12 @@
   description = "nix system flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    # packages
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    # systems
+    nixos-hardware.url = "github:nixos/nixos-hardware";
     darwin = {
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -15,6 +20,8 @@
 
   outputs =
     { self
+    , nixpkgs
+    , nixos-unstable
     , darwin
     , home-manager
     , ...
@@ -49,6 +56,27 @@
             home-manager.useUserPackages = true;
             home-manager.useGlobalPkgs = true;
             home-manager.users.harleywatson = import ./modules/home-manager;
+          }
+        ];
+      };
+      nixosConfigurations.thonkpad = nixos-unstable.lib.nixosSystem {
+        # NOTE: Change this to aarch64-linux if you are on ARM
+        system = "x86_64-linux";
+        modules = [
+          ./profiles/personal.nix
+          ./modules/hardware/thonkpad.nix
+          ./modules/nixos/thonkpad.nix
+          inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t410
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useUserPackages = true;
+            home-manager.useGlobalPkgs = true;
+            home-manager.users.htw = {
+              imports = [
+                (import ./modules/home-manager/personal)
+                (import ./modules/home-manager)
+              ];
+            };
           }
         ];
       };

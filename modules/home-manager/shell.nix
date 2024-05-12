@@ -4,6 +4,8 @@
 , ...
 }: {
   programs.zsh = {
+    enable = true;
+
     history = {
       extended = true;
     };
