@@ -1,6 +1,6 @@
 # system
 
-## 🏃 get started (on macOS)
+## get started (on macOS) 🏃
 first, authorise SSH keys in GitLab ([user profile](https://gitlab.canidae.systems/profile/keys) / [deploy keys](https://gitlab.canidae.systems/htw/system/-/settings/repository#js-deploy-keys-settings)).
 
 second, install nix using the [DeterminateSystems one-liner](https://github.com/DeterminateSystems/nix-installer?tab=readme-ov-file#usage):
@@ -22,14 +22,14 @@ $ nix run nix-darwin -- switch --flake .
 ```
 
 
-## 🔧 rebuilding
+### rebuilding 🔧
 after initial setup, we can use a shorter command to rebuild the system:
 ```bash
 $ darwin-rebuild switch --flake .
 ```
 
 
-### Homebrew
+#### Homebrew
 Formulae are managed by nix-darwin's [homebrew](https://daiderd.com/nix-darwin/manual/index.html#opt-homebrew.brews) module, mostly through [`modules/darwin/brew.nix`](modules/darwin/brew.nix).
 
 [`homebrew.global.brewfile`](https://daiderd.com/nix-darwin/manual/index.html#opt-homebrew.global.brewfile) is enabled, permitting use of [`brew bundle`](https://docs.brew.sh/Manpage#bundle-subcommand) to preview missing packages against the current state.
@@ -46,7 +46,7 @@ $ brew bundle cleanup
 ```
 
 
-## 🏃 get started (on NixOS)
+## get started (on NixOS) 🏃
 first, [download and install NixOS](https://nixos.org/download/).
 
 second, authorise SSH keys in GitLab ([user profile](https://gitlab.canidae.systems/profile/keys) / [deploy keys](https://gitlab.canidae.systems/htw/system/-/settings/repository#js-deploy-keys-settings)).
