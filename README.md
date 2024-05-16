@@ -3,13 +3,13 @@
 ## get started (on macOS) 🏃
 first, authorise SSH keys in GitLab ([user profile](https://gitlab.canidae.systems/profile/keys) / [deploy keys](https://gitlab.canidae.systems/htw/system/-/settings/repository#js-deploy-keys-settings)).
 
-second, install nix using the [DeterminateSystems one-liner](https://github.com/DeterminateSystems/nix-installer?tab=readme-ov-file#usage):
+second, install Lix using the [one-liner](https://lix.systems/install/):
 
 ```bash
-$ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+$ curl -sSf -L https://install.lix.systems/lix | sh -s -- install
 ```
 
-third, ensure nix is installed correctly:
+third, ensure Lix is installed correctly:
 ```bash
 $ nix run nixpkgs#hello
 ```
@@ -85,3 +85,5 @@ $ sudo nixos-rebuild switch --flake .
 ### further reading
 * https://daiderd.com/nix-darwin/manual/index.html
 * https://nix-community.github.io/home-manager/index.xhtml
+* https://lix.systems/resources/
+* https://docs.lix.systems/manual/nightly/
