@@ -4,7 +4,6 @@
   inputs = {
     # packages
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # systems
     nixos-hardware.url = "github:nixos/nixos-hardware";
@@ -16,12 +15,22 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    lix = {
+      url = "git+https://git@git.lix.systems/lix-project/lix?ref=refs/tags/2.90-beta.1";
+      flake = false;
+    };
+    lix-module = {
+      url = "git+https://git.lix.systems/lix-project/nixos-module";
+      inputs.lix.follows = "lix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     { self
     , nixpkgs
-    , nixos-unstable
+    , lix-module
     , darwin
     , home-manager
     , ...
@@ -43,6 +52,7 @@
               ];
             };
           }
+          lix-module.nixosModules.default
         ];
       };
       darwinConfigurations."M-LY5DPFDJKJ" = darwin.lib.darwinSystem {
@@ -57,9 +67,10 @@
             home-manager.useGlobalPkgs = true;
             home-manager.users.harleywatson = import ./modules/home-manager;
           }
+          lix-module.nixosModules.default
         ];
       };
-      nixosConfigurations.thonkpad = nixos-unstable.lib.nixosSystem {
+      nixosConfigurations.thonkpad = nixpkgs.lib.nixosSystem {
         # NOTE: Change this to aarch64-linux if you are on ARM
         system = "x86_64-linux";
         modules = [
@@ -78,6 +89,7 @@
               ];
             };
           }
+          lix-module.nixosModules.default
         ];
       };
     };
