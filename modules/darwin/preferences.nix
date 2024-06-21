@@ -6,7 +6,7 @@
       autohide = true;
       mru-spaces = false;
 
-      wvous-bl-corner = 13; # Lock Screen
+      wvous-bl-corner = 1; # Disabled
       wvous-br-corner = 1; # Disabled
       wvous-tl-corner = 1; # Disabled
       wvous-tr-corner = 1; # Disabled
