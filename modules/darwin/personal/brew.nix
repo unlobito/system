@@ -43,6 +43,7 @@
       "knockknock"
       "krisp"
       "little-snitch"
+      "lookingglassstudio"
       "monero-wallet"
       "nordvpn"
       "openscad"
