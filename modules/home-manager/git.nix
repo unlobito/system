@@ -8,6 +8,11 @@
       init.defaultBranch = "main";
       pull.rebase = false;
       push.autoSetupRemote = true;
+      url = {
+        "ssh://git@github.skyscannertools.net" = {
+          insteadOf = "https://github.skyscannertools.net";
+        };
+      };
     };
 
     ignores = [
