@@ -50,7 +50,7 @@
       "oscar"
       "plex"
       "qflipper"
-      "signal-beta"
+      "signal"
       "slack"
       "steam"
       "syncthing"
