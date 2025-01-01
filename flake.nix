@@ -3,8 +3,7 @@
 
   inputs = {
     # packages
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     # systems
     nixos-hardware.url = "github:nixos/nixos-hardware";
     darwin = {
@@ -12,11 +11,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     lix-module = {
-      url = "tarball+https://git.lix.systems/lix-project/nixos-module/archive/f05ab6682d9f4f18fc5281b6559d341fd45e5b4b.tar.gz";
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.1-2.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
