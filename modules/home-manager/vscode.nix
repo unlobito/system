@@ -1,0 +1,79 @@
+{ config, pkgs, inputs, ... }:
+{
+  programs.vscode = {
+    enable = true;
+
+    extensions = with nix-vscode-extensions;[
+      bbenoist.nix
+      # casualjim.gotemplate
+      # deerawan.vscode-dash
+      #dnicolson.binary-plist
+      eamodio.gitlens
+      #ecmel.vscode-html-css
+      esbenp.prettier-vscode
+      #esphome.esphome-vscode
+      firefox-devtools.vscode-firefox-debug
+      #firsttris.vscode-jest-runner
+      flowtype.flow-for-vscode
+      gitlab.gitlab-workflow
+      hashicorp.terraform
+      hbenl.vscode-test-explorer
+      jebbs.plantuml
+      jnoortheen.nix-ide
+      kangping.protobuf
+      kddejong.vscode-cfn-lint
+      lihui.vs-color-picker
+      littlefoxteam.vscode-python-test-adapter
+      marus25.cortex-debug
+      mcu-debug.debug-tracker-vscode
+      mcu-debug.memory-view
+      mcu-debug.peripheral-viewer
+      mcu-debug.rtos-views
+      mechatroner.rainbow-csv
+      ms-azuretools.vscode-docker
+      ms-ceintl.vscode-language-pack-es
+      ms-python.debugpy
+      ms-python.isort
+      ms-python.python
+      ms-python.vscode-pylance
+      ms-toolsai.jupyter
+      ms-toolsai.jupyter-keymap
+      ms-toolsai.jupyter-renderers
+      ms-toolsai.vscode-jupyter-cell-tags
+      ms-toolsai.vscode-jupyter-slideshow
+      ms-vscode-remote.remote-containers
+      ms-vscode-remote.remote-ssh
+      ms-vscode-remote.remote-ssh-edit
+      ms-vscode.cpptools
+      ms-vscode.remote-explorer
+      ms-vscode.test-adapter-converter
+      ms-vsliveshare.vsliveshare
+      platformio.platformio-ide
+      redhat.ansible
+      redhat.java
+      redhat.vscode-commons
+      redhat.vscode-xml
+      redhat.vscode-yaml
+      rust-lang.rust-analyzer
+      samuelcolvin.jinjahtml
+      serayuzgur.crates
+      sonarsource.sonarlint-vscode
+      tamasfe.even-better-toml
+      tbutterwith.bosun
+      vadimcn.vscode-lldb
+      visualstudioexptteam.intellicode-api-usage-examples
+      visualstudioexptteam.vscodeintellicode
+      vscjava.vscode-java-debug
+      vscjava.vscode-java-dependency
+      vscjava.vscode-java-pack
+      vscjava.vscode-java-test
+      vscjava.vscode-maven
+      xdebug.php-debug
+      xdebug.php-pack
+      zainchen.json
+      zhouronghui.propertylist
+      zhuangtongfa.material-theme
+      zobo.php-intellisense
+    ];
+  };
+}

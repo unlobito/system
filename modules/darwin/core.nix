@@ -1,4 +1,4 @@
-{ ... }: {
+{ nix-vscode-extensions, ... }: {
   # if you use zsh (the default on new macOS installations),
   # you'll need to enable this so nix-darwin creates a zshrc sourcing needed environment changes
   programs.zsh.enable = true;
@@ -19,6 +19,14 @@
     trusted-public-keys = [
       "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
       "cache.lix.systems:aBnZUw8zA7H35Cz2RyKFVs3H4PlGTLawyY5KRbvJR8o="
+    ];
+  };
+
+  nixpkgs = {
+    config.allowUnfree = true;
+
+    overlays = [
+      nix-vscode-extensions.overlays.default
     ];
   };
 

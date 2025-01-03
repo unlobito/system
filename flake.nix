@@ -18,6 +18,7 @@
       url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.1-2.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
   outputs =
@@ -26,6 +27,7 @@
     , lix-module
     , darwin
     , home-manager
+    , nix-vscode-extensions
     , ...
     } @ inputs: {
       darwinConfigurations."bobloblaw" = darwin.lib.darwinSystem {
