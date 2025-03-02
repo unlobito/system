@@ -32,6 +32,9 @@
     } @ inputs: {
       darwinConfigurations."bobloblaw" = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
+        specialArgs = {
+          inherit nix-vscode-extensions;
+        };
         modules = [
           ./profiles/personal.nix
           ./modules/darwin/personal
@@ -52,6 +55,9 @@
       };
       darwinConfigurations."M-LY5DPFDJKJ" = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
+        specialArgs = {
+          inherit nix-vscode-extensions;
+        };
         modules = [
           ./profiles/work.nix
           ./modules/darwin/work

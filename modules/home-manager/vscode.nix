@@ -3,7 +3,7 @@
   programs.vscode = {
     enable = true;
 
-    extensions = with nix-vscode-extensions;[
+    extensions = with pkgs.vscode-marketplace;[
       bbenoist.nix
       # casualjim.gotemplate
       # deerawan.vscode-dash
@@ -44,11 +44,11 @@
       ms-vscode-remote.remote-containers
       ms-vscode-remote.remote-ssh
       ms-vscode-remote.remote-ssh-edit
-      ms-vscode.cpptools
+      # removed: ms-vscode.cpptools
       ms-vscode.remote-explorer
       ms-vscode.test-adapter-converter
       ms-vsliveshare.vsliveshare
-      platformio.platformio-ide
+      # broken? platformio.platformio-ide
       redhat.ansible
       redhat.java
       redhat.vscode-commons
