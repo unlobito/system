@@ -7,7 +7,7 @@
     # systems
     nixos-hardware.url = "github:nixos/nixos-hardware";
     darwin = {
-      url = "github:lnl7/nix-darwin";
+      url = "github:lnl7/nix-darwin/nix-darwin-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
@@ -29,6 +29,26 @@
     , ...
     } @ inputs: {
       darwinConfigurations."bobloblaw" = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [
+          ./profiles/personal.nix
+          ./modules/darwin/personal
+          ./modules/darwin
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useUserPackages = true;
+            home-manager.useGlobalPkgs = true;
+            home-manager.users.htw = {
+              imports = [
+                (import ./modules/home-manager/personal)
+                (import ./modules/home-manager)
+              ];
+            };
+          }
+          lix-module.nixosModules.default
+        ];
+      };
+      darwinConfigurations."lupe" = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
           ./profiles/personal.nix
