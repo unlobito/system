@@ -39,7 +39,7 @@ in
     shellAliases = aliases;
   };
   programs.zsh = {
-    initExtra = lib.mkIf pkgs.stdenvNoCC.isDarwin ''
+    initContent = lib.mkIf pkgs.stdenvNoCC.isDarwin ''
       if command -v op >/dev/null; then
         eval "$(op completion zsh)"; compdef _op op
       fi

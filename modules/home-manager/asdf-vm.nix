@@ -5,7 +5,7 @@
   ];
 
   programs.zsh = {
-    initExtra = ''
+    initContent = ''
       . "${pkgs.asdf-vm}/share/asdf-vm/asdf.sh"
       source "${config.xdg.configHome}/asdf-direnv/zshrc"
     '';

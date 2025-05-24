@@ -5,7 +5,7 @@ switch: fmt fast-switch
 
 # Switch without running checks/formatting, for rapid iteration
 fast-switch:
-    darwin-rebuild --flake .#$(just get-name) switch
+    sudo darwin-rebuild --flake .#$(just get-name) switch
 
 # Format files, and ask to amend last commit if changes are present
 fmt:

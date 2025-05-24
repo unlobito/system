@@ -4,9 +4,6 @@
   programs.zsh.enable = true;
   # bash is enabled by default
 
-  # Make sure the nix daemon always runs
-  services.nix-daemon.enable = true;
-
   nix.settings = {
     # Necessary for using flakes on this system.
     experimental-features = "nix-command flakes";
