@@ -53,7 +53,7 @@
       "signal"
       "slack"
       "steam"
-      "syncthing"
+      "syncthing-app"
       "teamspeak-client"
       "telegram"
       "thonny"
