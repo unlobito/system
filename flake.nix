@@ -73,6 +73,7 @@
         system = "aarch64-darwin";
         modules = [
           ./profiles/work.nix
+          ./modules/hardware/M-LY5DPFDJKJ.nix
           ./modules/darwin/work
           ./modules/darwin
           home-manager.darwinModules.home-manager
