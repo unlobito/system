@@ -9,12 +9,10 @@
     experimental-features = "nix-command flakes";
 
     substituters = [
-      "https://devenv.cachix.org"
       "https://cache.lix.systems"
     ];
 
     trusted-public-keys = [
-      "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
       "cache.lix.systems:aBnZUw8zA7H35Cz2RyKFVs3H4PlGTLawyY5KRbvJR8o="
     ];
   };
