@@ -32,6 +32,7 @@
         system = "aarch64-darwin";
         modules = [
           ./profiles/personal.nix
+          ./modules/hardware/bobloblaw.nix
           ./modules/darwin/personal
           ./modules/darwin
           home-manager.darwinModules.home-manager
