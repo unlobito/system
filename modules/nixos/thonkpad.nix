@@ -53,7 +53,8 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  nixpkgs.config.allowUnfree = true;
   services.fprintd.enable = true;
   services.fprintd.tod.enable = true;
-  services.fprintd.tod.driver = pkgs.libfprint-2-tod1-vfs0090;
+  services.fprintd.tod.driver = pkgs.libfprint-2-tod1-goodix;
 }
