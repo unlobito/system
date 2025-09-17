@@ -15,7 +15,6 @@
       "1password/tap"
       "aws/tap"
       "homebrew/bundle"
-      "homebrew/cask-versions"
     ];
 
     brews = [
@@ -46,6 +45,7 @@
       "rclone"
       "screenresolution"
       "terraform"
+      "uv"
       "watch"
       "watchman"
       "wget"
@@ -80,6 +80,7 @@
       "rectangle"
       "secretive"
       "sourcetree"
+      "utm"
       "visual-studio-code"
       "vlc"
       "wireshark-app"

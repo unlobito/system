@@ -2,8 +2,8 @@
   homebrew = {
     taps = [
       {
-        name = "mshell/mshell";
-        clone_target = "git@github.skyscannertools.net:mshell/homebrew-mshell.git";
+        name = "skyscanner/mshell";
+        clone_target = "git@github.com:Skyscanner/homebrew-mshell.git";
         force_auto_update = true;
       }
       "skyscanner/tools"
@@ -17,12 +17,12 @@
       "helm"
       "k9s"
       "kubectx"
-      "mshell/mshell/artifactory-cli-login"
-      "mshell/mshell/skyscanner-bundle"
       "pinentry"
       "pre-commit"
       "prettier"
       "protobuf"
+      "skyscanner/mshell/artifactory-cli-login"
+      "skyscanner/mshell/skyscanner-bundle"
       "skyscanner/tools/turbolift"
       "snyk/tap/snyk"
       "sonar-scanner"

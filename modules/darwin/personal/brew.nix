@@ -60,7 +60,6 @@
       "tor-browser"
       "transmission"
       "transmit"
-      "utm"
       "veracrypt"
     ];
 
