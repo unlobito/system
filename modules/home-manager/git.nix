@@ -1,10 +1,12 @@
 { pkgs, ... }: {
   programs.git = {
     enable = true;
-    userName = "Harley Watson";
-    userEmail = "htw@lobi.to";
     lfs.enable = true;
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Harley Watson";
+        email = "htw@lobi.to";
+      };
       init.defaultBranch = "main";
       pull.rebase = false;
       push.autoSetupRemote = true;
