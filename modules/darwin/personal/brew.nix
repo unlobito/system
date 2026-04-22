@@ -28,7 +28,6 @@
     ];
 
     casks = [
-      "arduino"
       "audacity"
       "balenaetcher"
       "calibre"
@@ -66,9 +65,7 @@
     masApps = {
       "Apple Configurator" = 1037126344;
       "EchoHam" = 873302145;
-      "MQTTX" = 1514074565;
       "Smart Card Utility" = 1444710309;
-      "WhatsApp" = 1147396723;
     };
   };
 }

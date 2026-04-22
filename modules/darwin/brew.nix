@@ -63,6 +63,7 @@
       "arq"
       "coconutbattery"
       "dash"
+      "daisydisk"
       "docker-desktop"
       "elgato-stream-deck"
       "firefox"
@@ -102,7 +103,6 @@
       "Ivory" = 6444602274;
       "Speedtest" = 1153157709;
       "Xcode" = 497799835;
-      "YubiKey Personalization Tool" = 638161122;
     };
   };
 }
