@@ -6,7 +6,7 @@
 
   programs.zsh = {
     initContent = ''
-      . "${pkgs.asdf-vm}/share/asdf-vm/asdf.sh"
+      . "${pkgs.asdf-vm}/etc/profile.d/asdf-prepare.sh"
       source "${config.xdg.configHome}/asdf-direnv/zshrc"
     '';
   };
