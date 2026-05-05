@@ -12,7 +12,7 @@
   };
 
   home.file = {
-    ".asdfrc".text = '''
+    ".asdfrc".text = ''
       legacy_version_file = yes
       java_macos_integration_enable = yes
     '';
