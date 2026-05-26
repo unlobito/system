@@ -34,8 +34,15 @@ dirchanger() {
     # Extract the path from the provided input
     local urlpath=$(extract_path_from_url "$1")
 
-    # Construct the local directory path
-    local local_dir="$HOME/w/skyscanner/$urlpath"
+    # Construct the local directory path based on owner/org
+    local owner="${urlpath%%/*}"
+    local base_dir
+    if [[ "${(L)owner}" == "skyscanner" ]]; then
+        base_dir="$HOME/w/skyscanner"
+    else
+        base_dir="$HOME/w/notmine"
+    fi
+    local local_dir="$base_dir/$urlpath"
 
     # Check if the directory exists
     if [[ ! -d "$local_dir" ]]; then
@@ -47,7 +54,7 @@ dirchanger() {
             git_clone_url="$1"
         else
             # Modify this line as necessary to form a proper Git URL for other inputs
-            git_clone_url="git@github.skyscannertools.net:${urlpath}.git"
+            git_clone_url="git@github.com:${urlpath}.git"
         fi
         echo "Cloning $git_clone_url into $local_dir"
         git clone "$git_clone_url" "$local_dir"
