@@ -38,6 +38,10 @@ gc age='60':
     sudo nix-collect-garbage --delete-older-than {{ age }}d
     nix-collect-garbage
 
+# GitHub rate limiting can be rough on shared IPv4 addresses
+flake-update:
+    NIX_CONFIG="access-tokens = github.com=$(gh auth token)" nix flake update
+
 # Get name of config to apply, overriden with .hostname file
 [private]
 @get-name:
