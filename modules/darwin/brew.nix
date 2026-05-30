@@ -14,7 +14,6 @@
     taps = [
       "1password/tap"
       "aws/tap"
-      "homebrew/bundle"
     ];
 
     brews = [
@@ -76,7 +75,6 @@
       "iterm2"
       "monitorcontrol"
       "obs"
-      "obsbot-center"
       "pdf-expert"
       "rectangle"
       "secretive"
@@ -86,22 +84,26 @@
       "vlc"
       "wireshark-app"
       "yubico-authenticator"
-      "yubico-yubikey-manager"
     ];
 
 
     masApps = {
+      # iLife/iWork
       "GarageBand" = 682658836;
       "iClip" = 468369783;
       "iMovie" = 408981434;
       "Keynote" = 409183694;
       "Numbers" = 409203825;
       "Pages" = 409201541;
+
       "Amphetamine" = 937984704;
+      "Broadcasts" = 1469995354;
       "Brother P-touch Editor" = 1453365242;
       "Home Assistant" = 1099568401;
       "Ivory" = 6444602274;
+      "Parcel" = 375589283;
       "Speedtest" = 1153157709;
+      "TestFlight" = 899247664;
       "Xcode" = 497799835;
     };
   };

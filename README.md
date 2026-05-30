@@ -28,6 +28,11 @@ after initial setup, we can use a shorter command to rebuild the system:
 $ darwin-rebuild switch --flake .
 ```
 
+or, the even shorter:
+```bash
+$ just switch
+```
+
 
 #### Homebrew
 Formulae are managed by nix-darwin's [homebrew](https://daiderd.com/nix-darwin/manual/index.html#opt-homebrew.brews) module, mostly through [`modules/darwin/brew.nix`](modules/darwin/brew.nix).

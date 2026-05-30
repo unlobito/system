@@ -2,7 +2,6 @@
   homebrew = {
     taps = [
       "rfidresearchgroup/proxmark3"
-      "numworks/tap"
     ];
 
     brews = [
@@ -17,7 +16,6 @@
         name = "mfoc";
         link = false;
       }
-      "numworks/tap/arm-none-eabi-gcc"
       "platformio"
       "qdmr"
       "rfidresearchgroup/proxmark3/proxmark3"
