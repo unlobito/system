@@ -64,6 +64,8 @@
       "Apple Configurator" = 1037126344;
       "EchoHam" = 873302145;
       "Smart Card Utility" = 1444710309;
+      "Tailscale" = 1475387142;
+      "WhatsApp" = 310633997;
     };
   };
 }
