@@ -7,7 +7,6 @@
         force_auto_update = true;
       }
       "skyscanner/tools"
-      "snyk/tap"
     ];
 
     brews = [
@@ -24,7 +23,6 @@
       "skyscanner/mshell/artifactory-cli-login"
       "skyscanner/mshell/skyscanner-bundle"
       "skyscanner/tools/turbolift"
-      "snyk/tap/snyk"
       "sonar-scanner"
       "vegeta"
     ];

@@ -5,6 +5,11 @@
     onActivation = {
       autoUpdate = true;
       cleanup = "uninstall";
+
+      # https://github.com/nix-darwin/nix-darwin/issues/1787#issuecomment-4605644819
+      extraFlags = [
+        "--force-cleanup"
+      ];
     };
 
     global = {
