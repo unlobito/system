@@ -14,6 +14,10 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-rosetta-builder = {
+      url = "github:cpick/nix-rosetta-builder";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -21,6 +25,7 @@
     , nixpkgs
     , darwin
     , home-manager
+    , nix-rosetta-builder
     , ...
     } @ inputs: {
       darwinConfigurations."bobloblaw" = darwin.lib.darwinSystem {
@@ -77,6 +82,8 @@
             home-manager.useGlobalPkgs = true;
             home-manager.users.harleywatson = import ./modules/home-manager;
           }
+          nix-rosetta-builder.darwinModules.default
+          ./modules/nix-rosetta-builder.nix
           ./modules/lix.nix
         ];
       };
