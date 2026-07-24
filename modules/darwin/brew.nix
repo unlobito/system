@@ -5,11 +5,6 @@
     onActivation = {
       autoUpdate = true;
       cleanup = "uninstall";
-
-      # https://github.com/nix-darwin/nix-darwin/issues/1787#issuecomment-4605644819
-      extraFlags = [
-        "--force-cleanup"
-      ];
     };
 
     global = {
@@ -18,7 +13,6 @@
 
     taps = [
       "1password/tap"
-      "aws/tap"
     ];
 
     brews = [
@@ -61,7 +55,10 @@
 
     casks = [
       "1password"
-      "1password-cli"
+      {
+        name = "1password/tap/1password-cli";
+        trusted = true;
+      }
       "appcleaner"
       "archiver-app"
       "arq"

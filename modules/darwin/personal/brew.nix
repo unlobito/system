@@ -18,7 +18,14 @@
       }
       "platformio"
       "qdmr"
-      "rfidresearchgroup/proxmark3/proxmark3"
+      {
+        name = "rfidresearchgroup/proxmark3/arm-none-eabi-gcc";
+        trusted = true;
+      }
+      {
+        name = "rfidresearchgroup/proxmark3/proxmark3";
+        trusted = true;
+      }
       "rtl_433"
       "soapysdr"
       "telnet"
@@ -57,12 +64,12 @@
       "tor-browser"
       "transmission"
       "transmit"
-      "veracrypt"
     ];
 
     masApps = {
       "Apple Configurator" = 1037126344;
       "EchoHam" = 873302145;
+      "Jump Desktop (RDP, VNC, Fluid)" = 524141863;
       "Smart Card Utility" = 1444710309;
       "Tailscale" = 1475387142;
       "WhatsApp" = 310633997;

@@ -5,8 +5,12 @@
         name = "skyscanner/mshell";
         clone_target = "git@github.com:Skyscanner/homebrew-mshell.git";
         force_auto_update = true;
+        trusted = true;
       }
-      "skyscanner/tools"
+      {
+        name = "skyscanner/tools";
+        trusted = true;
+      }
     ];
 
     brews = [
