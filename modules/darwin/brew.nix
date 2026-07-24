@@ -78,6 +78,7 @@
       "inkscape"
       "insomnia"
       "iterm2"
+      "lastfm"
       "monitorcontrol"
       "obs"
       "pdf-expert"
