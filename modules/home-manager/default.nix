@@ -4,6 +4,7 @@
     ./1password.nix
     ./asdf-vm.nix
     ./direnv.nix
+    ./eza.nix
     ./git.nix
     ./shell.nix
   ];
