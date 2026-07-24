@@ -20,6 +20,7 @@
       "awscli"
       "chezmoi"
       "curl"
+      "font-hack-nerd-font" # used by eza
       "fswatch"
       "gh"
       "gifsicle"
