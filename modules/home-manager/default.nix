@@ -26,7 +26,6 @@
   home.packages = with pkgs; [
     just
     nvd
-    nixpkgs-fmt
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

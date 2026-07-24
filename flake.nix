@@ -5,7 +5,10 @@
     # packages
     nixpkgs.url = "github:nixos/nixpkgs/release-26.05";
     # systems
-    nixos-hardware.url = "github:nixos/nixos-hardware";
+    nixos-hardware = {
+      url = "github:nixos/nixos-hardware";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     darwin = {
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,16 +21,37 @@
       url = "github:cpick/nix-rosetta-builder";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    systems.url = "github:nix-systems/default";
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    { self
-    , nixpkgs
-    , darwin
-    , home-manager
-    , nix-rosetta-builder
-    , ...
-    } @ inputs: {
+    {
+      self,
+      nixpkgs,
+      darwin,
+      home-manager,
+      nix-rosetta-builder,
+      systems,
+      treefmt-nix,
+      ...
+    }@inputs:
+    let
+      eachSystem = f: nixpkgs.lib.genAttrs (import systems) (system: f nixpkgs.legacyPackages.${system});
+
+      treefmtEval = eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
+    in
+    {
+      # for `nix fmt`
+      formatter = eachSystem (pkgs: treefmtEval.${pkgs.stdenv.hostPlatform.system}.config.build.wrapper);
+      # for `nix flake check`
+      checks = eachSystem (pkgs: {
+        formatting = treefmtEval.${pkgs.stdenv.hostPlatform.system}.config.build.check self;
+      });
+
       darwinConfigurations."bobloblaw" = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
@@ -88,7 +112,6 @@
         ];
       };
       nixosConfigurations.thonkpad = nixpkgs.lib.nixosSystem {
-        # NOTE: Change this to aarch64-linux if you are on ARM
         system = "x86_64-linux";
         modules = [
           ./profiles/personal.nix

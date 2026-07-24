@@ -92,7 +92,6 @@
       "yubico-authenticator"
     ];
 
-
     masApps = {
       # iLife/iWork
       "GarageBand" = 682658836;

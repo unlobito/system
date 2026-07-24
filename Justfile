@@ -9,10 +9,10 @@ fast-switch:
 
 # Format files, and ask to amend last commit if changes are present
 fmt:
-  nixpkgs-fmt .
+  nix fmt
 
 fmt-check: 
-  nixpkgs-fmt --check .
+  nix flake check
 
 # Diff this host's closure in the flake against its current one
 diff:

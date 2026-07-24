@@ -1,8 +1,9 @@
 # https://github.com/kclejeune/system/blob/6b88ae251de06398062a249a629eea99966530fe/modules/home-manager/1password.nix
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  ...
 }:
 let
   home = config.home.homeDirectory;

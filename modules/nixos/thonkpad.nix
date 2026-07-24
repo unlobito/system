@@ -5,12 +5,11 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ../common.nix
-      ./core.nix
-      ./graphical.nix
-    ];
+  imports = [
+    ../common.nix
+    ./core.nix
+    ./graphical.nix
+  ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -27,7 +26,10 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   user = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
       kdePackages.kate
       #  thunderbird
