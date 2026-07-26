@@ -20,7 +20,6 @@
       "awscli"
       "chezmoi"
       "curl"
-      "font-hack-nerd-font" # used by eza
       "fswatch"
       "gh"
       "gifsicle"
@@ -68,6 +67,7 @@
       "daisydisk"
       "docker-desktop"
       "elgato-stream-deck"
+      "font-hack-nerd-font" # used by eza
       "firefox"
       "google-chrome"
       "handbrake-app"
